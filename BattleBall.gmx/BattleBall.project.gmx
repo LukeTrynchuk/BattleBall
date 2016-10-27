@@ -27,6 +27,7 @@
     </sounds>
     <sounds name="Effects">
       <sound>sound\snd_score</sound>
+      <sound>sound\metal_ping1</sound>
       <sounds name="Explosions">
         <sound>sound\snd_explosion1</sound>
         <sound>sound\snd_explosion2</sound>
@@ -192,6 +193,7 @@
         <script>scripts\SetBars.gml</script>
         <script>scripts\SwitchPlayerGun.gml</script>
       </scripts>
+      <script>scripts\Playhit.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -261,6 +263,7 @@
         <object>objects\Obj_rubbish2</object>
         <object>objects\Obj_Fence</object>
       </objects>
+      <object>objects\obj_metal</object>
     </objects>
     <objects name="Player">
       <object>objects\Obj_player</object>
