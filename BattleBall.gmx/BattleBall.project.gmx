@@ -150,6 +150,7 @@
       <sprite>sprites\Minigun</sprite>
       <sprite>sprites\Sniper</sprite>
     </sprites>
+    <sprite>sprites\sprite66</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -247,6 +248,7 @@
       <object>objects\Obj_Slope</object>
       <object>objects\Obj_Net</object>
       <object>objects\Obj_Dynamic_Parent</object>
+      <object>objects\Obj_Moving_Platform</object>
       <object>objects\Obj_Static_Parent</object>
       <objects name="Temp">
         <object>objects\Obj_Truck</object>
