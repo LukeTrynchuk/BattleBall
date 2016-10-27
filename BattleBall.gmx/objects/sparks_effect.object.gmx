@@ -45,7 +45,7 @@ part_type_life(individual_spark,room_speed * 0.5,room_speed * 1.5);             
 //Create sparks
 sparks_emitter = part_emitter_create(sparks);           //Create the emitter
 part_emitter_region(sparks, sparks_emitter, x - 4, x + 4,y - 4,y + 4,ps_shape_rectangle,ps_distr_gaussian);      //region to stream particles from
-part_emitter_stream(sparks,sparks_emitter,individual_spark,10);
+part_emitter_stream(sparks,sparks_emitter,individual_spark,0);
 
 
 </string>
