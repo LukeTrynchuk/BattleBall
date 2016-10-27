@@ -93,6 +93,7 @@ audio_s = audio_emitter_create();
         }  
         
         Playhit(metal_ping1, audio_s);
+     
 </string>
           </argument>
         </arguments>

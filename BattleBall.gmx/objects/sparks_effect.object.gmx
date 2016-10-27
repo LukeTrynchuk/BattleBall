@@ -36,15 +36,16 @@ part_system_depth(sparks, 60);                          //Set the depth of the o
 individual_spark = part_type_create();                  //Create a particle - Basic settings
 part_type_shape(individual_spark, pt_shape_spark);         //Define the shape of the particle - can use own sprite or built in shape   
 part_type_orientation(individual_spark,0,0,0,0,1);         //Effects angle
-part_type_size(individual_spark, 0.01, 0.10,-0.01,1);          //Effects size
-part_type_speed(individual_spark, 0.01,0.02,0, 0);          //Effects speed
+part_type_size(individual_spark, 0.1, 0.2,-0.01,1);          //Effects size
+part_type_speed(individual_spark, 0.5,5,-0.1, 1);          //Effects speed
 part_type_direction(individual_spark, 60,120,0,4);        //Effects direction
-part_type_life(individual_spark,0.005 / room_speed,0.006 / room_speed);                  //Effects lifetime
+part_type_life(individual_spark,room_speed * 0.5,room_speed * 1.5);                  //Effects lifetime
+
 
 //Create sparks
 sparks_emitter = part_emitter_create(sparks);           //Create the emitter
 part_emitter_region(sparks, sparks_emitter, x - 4, x + 4,y - 4,y + 4,ps_shape_rectangle,ps_distr_gaussian);      //region to stream particles from
-part_emitter_stream(sparks,sparks_emitter,individual_spark,1);
+part_emitter_stream(sparks,sparks_emitter,individual_spark,10);
 
 
 </string>
