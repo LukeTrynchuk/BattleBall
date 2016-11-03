@@ -27,16 +27,16 @@ var Gun_Y = 350;
 draw_sprite_ext(Item_Square_Red, 0,Gun_X, Gun_Y, 1.2,1.2,0,c_white, 1);                                             //Draw the gun item square
 switch(global.Class_Gun[Current_Class_Option])                                                          //Draw the different appropriate gun sprites
 {
-    case "Ol' Rusty":
+    case "Pistol":
         draw_sprite_ext(Pistol, 0, Gun_X,Gun_Y,5,5,0, c_white, 1);
         break;
-    case "Eh Kay 47":
+    case "MachineGun":
         draw_sprite_ext(Machinegun, 0,Gun_X,Gun_Y,5,5,0,c_white,1);
         break;
-    case "Spitter":
+    case "Minigun":
         draw_sprite_ext(Minigun, 0,Gun_X,Gun_Y,5,5,0,c_white, 1);
         break;
-    case "Blind Eye":
+    case "Sniper":
         draw_sprite_ext(Sniper, 0, Gun_X,Gun_Y,5,5,0,c_white,1);
         break;
 }
@@ -52,20 +52,52 @@ for(var NumPerks = 0; NumPerks < 2; NumPerks++)                                 
 {
     switch(global.Class_Perk[Current_Class_Option * 2 + NumPerks])
     {
-        case "Triple_Jump":
+        case "TripleJumpPerk":
             draw_sprite_ext(TripleJumpPerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 1);
             break;
-        case "Rate_of_fire":
+        case "RateOfFirePerk":
             draw_sprite_ext(RateOfFirePerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 1);
             break;
-        case "Explosive":
+        case "ExtraExplosivePerk":
             draw_sprite_ext(ExtraExplosivePerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 1);
             break;
-        case "Dash_Cooldown":
+        case "DashCooldownPerk":
             draw_sprite_ext(DashCooldownPerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 1);
             break;
-        case "Ground_Smash":
+        case "SmashPerk":
             draw_sprite_ext(SmashPerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 1);
             break;
     }
+}
+
+//Draw the item selector
+switch(myEditingType)
+{
+    case EditingType.PERKS:
+        draw_sprite_ext(Select_Square, 0,Perk_X + Perk_Offset * CurrentPerk, Perk_Y, 1,1,0,c_white, 1);
+        Message = "";
+        switch(global.Class_Perk[global.Current_Class * 2 + CurrentPerk])
+        {
+            case "TripleJumpPerk":
+                Message = global.Perk_Desc[0];
+                break;
+            case "RateOfFirePerk":
+                Message = global.Perk_Desc[1];
+                break;
+            case "ExtraExplosivePerk":
+                Message = global.Perk_Desc[2];
+                break;
+            case "DashCooldownPerk":
+                Message = global.Perk_Desc[3];
+                break;
+            case "Aim8DirPerk":
+                Message = global.Perk_Desc[4];
+                break;
+            case "SmashPerk":
+                Message = global.Perk_Desc[5];
+                break;
+        }
+        draw_set_font(Perk_Desc_Font);
+        draw_text(Perk_X , Perk_Y + 100, Message);
+        break;
 }

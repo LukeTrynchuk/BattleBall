@@ -222,8 +222,9 @@
         <script>scripts\SwitchPlayerGun.gml</script>
         <scripts name="State">
           <scripts name="Step">
-            <script>scripts\MM_CHANGE_ITEM.gml</script>
-            <script>scripts\MM_GAME_TYPE.gml</script>
+            <scripts name="MM_CHANGE_ITEM">
+              <script>scripts\MM_CHANGE_ITEM.gml</script>
+            </scripts>
             <scripts name="MM_MAIN">
               <script>scripts\MM_MAIN.gml</script>
               <script>scripts\MM_MENU_PLAY_GAME.gml</script>
@@ -239,6 +240,11 @@
               <script>scripts\MM_EDIT_CLASS.gml</script>
               <script>scripts\MM_EDIT_CLASS_CONFIRM.gml</script>
               <script>scripts\MM_EDIT_CLASS_BACK.gml</script>
+            </scripts>
+            <scripts name="MM_GAME_TYPE">
+              <script>scripts\MM_GAME_TYPE.gml</script>
+              <script>scripts\MM_GAME_TYPE_CONFIRM.gml</script>
+              <script>scripts\MM_GAME_TYPE_BACK.gml</script>
             </scripts>
           </scripts>
           <scripts name="Draw">
@@ -260,6 +266,7 @@
     <font>fonts\Class_Choose_Current_Font</font>
     <font>fonts\Class_Font_New_Menu</font>
     <font>fonts\Main_Menu_Font</font>
+    <font>fonts\Perk_Desc_Font</font>
   </fonts>
   <objects name="objects">
     <objects name="effects">
@@ -301,6 +308,7 @@
         <object>objects\Obj_ClassPlayer</object>
         <object>objects\Obj_Bar</object>
       </objects>
+      <object>objects\Obj_Class_Manager</object>
     </objects>
     <objects name="Level">
       <object>objects\Obj_Ball</object>

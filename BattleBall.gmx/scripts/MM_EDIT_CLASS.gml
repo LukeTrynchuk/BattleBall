@@ -1,17 +1,17 @@
 ///MM_EDIT_CLASS()
 GetClassInput();                                                                                //Get the input
 
-if((up || down) && CanSwitchClass)                                                              //If the player is changing the selection
+if((left || right) && CanSwitchClass)                                                              //If the player is changing the selection
 {
-    //var chooseDirection = -1;                                                                   //Set the direction
-    //if(down) chooseDirection = 1;                                                               //Change the direction
+    var chooseDirection = -1;                                                                   //Set the direction
+    if(right) chooseDirection = 1;                                                               //Change the direction
     
-    //Current_Class_Option += chooseDirection;                                                    //Increment by the direction
+    CurrentPerk += chooseDirection;                                                    //Increment by the direction
     
-    //if(Current_Class_Option >= array_length_1d(myClasses)) Current_Class_Option = 0;            //Clamp
-    //if(Current_Class_Option < 0) Current_Class_Option = array_length_1d(myClasses) - 1;         //Clamp
+    if(CurrentPerk >= 2) CurrentPerk = 0;            //Clamp
+    if(CurrentPerk < 0) CurrentPerk = 1;         //Clamp
     
-    //Reset_Menu_Timer();                                                                         //Reset the timer
+    Reset_Menu_Timer();                                                                         //Reset the timer
 }
 else if (confirm)                                                             //If the player is going confirming
 {

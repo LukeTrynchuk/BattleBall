@@ -1,6 +1,8 @@
 ///MM_MAIN_DRAW()
 draw_set_font(Main_Menu_Font);
 DRAW_BARS();
+
+//Drawing variable interfaces
 var OptionOffset = 50;                                                                                            //The amount of offset for each option
 var X_Start = room_width / 7;                                                                                     //The starting x position
 var Y_Start = room_width / 5;                                                                                     //The starting y position
@@ -8,6 +10,7 @@ var Scale = 0.5;
 var Choose_XOffset = 10;
 var SelectorOffset = 225;
 
+//Draw the different options on the main menu
 switch(Current_Selected_Option)
 {
     case 0:                                                                                                       //Play game
@@ -32,6 +35,7 @@ switch(Current_Selected_Option)
 
 draw_sprite_ext(Title_JustName, 0, X_Start - 60, Y_Start - OptionOffset * 1.5, 1,1,0,c_white, 1);                   //Draw the game title
 
+//Draw the boxes for player info
 var Box_col = make_colour_rgb(45,45,45);
 draw_line_width_colour(room_width - 400,200, room_width - 100, 200, 30,  Box_col, Box_col);
 
@@ -40,6 +44,7 @@ draw_text_colour(room_width - 390,193, PlayerName, Name_col, Name_col, Name_col,
 draw_text_colour(room_width - 140,193, "lvl 5", Name_col, Name_col, Name_col, Name_col, 1);                         //Just to tease leveling up
 
 
+//Draw the class info stuff
 var ClassInfoX = room_width - 300;
 var ClassInfoY = 250;
 

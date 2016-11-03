@@ -18,12 +18,12 @@ else if (btn_Y)
     global.Current_Class = Current_Class_Option;                                                //Set the new class
     Reset_Menu_Timer();
 }
-else if (confirm)                                                             //If the player is going confirming
+else if (confirm)                                                                               //If the player is going confirming
 {
     MM_CHOOSE_CLASS_CONFIRM();                                                                  //Execute confirm code
     Reset_Menu_Timer();                                                                         //Reset the timer
 }
-else if (back)                                                                //If the player is going back
+else if (back)                                                                                  //If the player is going back
 {
     MM_CHOOSE_CLASS_BACK();                                                                     //Execute the back code
     Reset_Menu_Timer();

@@ -196,7 +196,7 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(global.Bullet_Type = "Rocket")
+            <string>if(global.Class_Gun[global.Current_Class] == "Rocket")
 {
     global.Explosion = instance_create(x,y, Obj_Explosion);
     with(global.Explosion)
@@ -250,7 +250,7 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(global.Bullet_Type = "Rocket")
+            <string>if(global.Class_Gun[global.Current_Class] == "Rocket")
 {
     global.Explosion = instance_create(x,y, Obj_Explosion);
     with(global.Explosion)
@@ -302,7 +302,7 @@ instance_destroy();
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(global.Bullet_Type = "Rocket")
+            <string>if(global.Class_Gun[global.Current_Class] == "Rocket")
 {
     global.Explosion = instance_create(x,y, Obj_Explosion);
     with(global.Explosion)

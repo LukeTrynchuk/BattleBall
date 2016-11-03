@@ -612,34 +612,24 @@ if(right_trigger &amp;&amp; canShoot)                                           
         else if ( phy_position_x &gt; room_width/2)
         {
         audio_emitter_position(audio_s, -100, y, 0);
-        }                                                                                                                       //if we did not use the var keyword, inst would become a data member
-                                                                                                                            //and be available to other scripts in the same object.
-    
-    var BulletType = "Pistol";
-    if(playerNum == 1)
-    {
-        BulletType = global.Player1Gun;
-    }
-    else
-    {
-        BulletType = global.Player2Gun;
-    }
-                                                                                                                            
-    if(BulletType == "Pistol")                                                                                  //If the current gun type is pistol
+        }                                                                                                                       
+                                        
+    var myGun = global.Class_Gun[global.Current_Class];                                                              
+    if(myGun == "Pistol")                                                                                  //If the current gun type is pistol
     {
         inst = instance_create(phy_position_x + 17 * image_xscale, phy_position_y, Obj_Bullet);                         //Create the bullet
         ShootTimer = Rate_Of_Fire_Pistol;                                                                               //Set the bullet timer (rate of fire)
         audio_play_sound_on(audio_s, hand_gun, false, 1);
         ShotKickBack = PistolGunKickBack;                                                                               //Set the kickback
     }
-    else if (BulletType == "MachineGun")                                                                        //If the current gun type is machine gun
+    else if (myGun == "MachineGun")                                                                        //If the current gun type is machine gun
     {
         inst = instance_create(phy_position_x + 17 * image_xscale, phy_position_y, Obj_MachineGun_Bullet);              //Create the bullet
         ShootTimer = Rate_Of_Fire_MachineGun;                                                                           //Set the shootTimer ( rate of fire)
         audio_play_sound_on(audio_s, machine_gun, false, 1);
         ShotKickBack = MachineGunKickBack;                                                                              //Set the kickback
     }
-    else if (BulletType == "Minigun")                                                                           //If the current gun type is Minigun
+    else if (myGun == "Minigun")                                                                           //If the current gun type is Minigun
     {
         inst = instance_create(phy_position_x + 17 * image_xscale, phy_position_y, Obj_Minigun_Bullet);                 //Create three minigun bullets
         var inst2 = instance_create(phy_position_x + 17 * image_xscale, phy_position_y, Obj_Minigun_Bullet);
@@ -658,7 +648,7 @@ if(right_trigger &amp;&amp; canShoot)                                           
         }
         ShotKickBack = MinigunKickBack;                                                                                 //Set the kickback
     }
-     else if (BulletType == "Sniper")
+     else if (myGun == "Sniper")
     {
         inst = instance_create(phy_position_x + 17 * image_xscale, phy_position_y, Obj_Sniper_Bullet);                  //Create the sniper bullet
         ShootTimer = Rate_Of_Fire_Sniper;                                                                               //Set the shoot timer (rate of fire)
@@ -956,37 +946,32 @@ if(left_bumper &amp;&amp; CanThrowGrenade &amp;&amp; GrenadesLeft &gt; 0)
             <string>///Perks
 if(!hasPerks)
 {
-    var Perks = global.ChosenPerks;
-    if(playerNum == 2) Perks = global.ChosenPerksP2;
-
-    for(var CurrentPerk = 0; CurrentPerk &lt; array_length_1d(Perks); CurrentPerk++)
+    for(var CurrentPerk = 0; CurrentPerk &lt; 2; CurrentPerk++)
     {
-        if(Perks[CurrentPerk])
+        switch(global.Class_Perk[global.Current_Class * 2  + CurrentPerk])
         {
-            switch(CurrentPerk)
-            {
-                case 0 :                //Triple Jump
-                    ConsecutiveJumps = 3;
-                    break;
-                case 1 :                //Rate of fire (x.75)
-                    Rate_Of_Fire_Pistol *= 0.75;
-                    Rate_Of_Fire_MachineGun *= 0.75;
-                    Rate_Of_Fire_MiniGun *= 0.75;
-                    Rate_Of_Fire_Sniper *= 0.75;
-                    break;
-                case 2 :                //Extra Explosive
-                    GrenadesLeft++;
-                    break;
-                case 3 :                //Dash cool down (x.75)
-                    dash_cool_down *= .75;
-                    break;
-                case 4 :                //Aim in 8 directions
-                    Aim_8_Dir = true;  
-                    break;
-                case 5 :                //Smash attack
-                    smash_attack = true;
-                    break;
-            }
+        case "TripleJumpPerk" :                //Triple Jump
+            ConsecutiveJumps = 3;
+            break;
+        case "RateOfFirePerk" :                //Rate of fire (x.75)
+            Rate_Of_Fire_Pistol *= 0.75;
+            Rate_Of_Fire_MachineGun *= 0.75;
+            Rate_Of_Fire_MiniGun *= 0.75;
+            Rate_Of_Fire_Sniper *= 0.75;
+            break;
+        case "ExtraExplosivePerk" :                //Extra Explosive
+            GrenadesLeft++;
+            break;
+        case "DashCooldownPerk" :                //Dash cool down (x.75)
+            dash_cool_down *= .75;
+            break;
+        case "Aim8DirPerk" :                //Aim in 8 directions
+            Aim_8_Dir = true;  
+            break;
+        case "SmashPerk" :                //Smash attack
+            smash_attack = true;
+            break;
+            
         }
     }
     hasPerks = true;
