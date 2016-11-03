@@ -32,7 +32,7 @@ PauseIMG = screen_save("SCREEN.png");
 PauseSpr = sprite_add("SCREEN.png", 0, false, false, 0, 0);
 
 
-global.Ball = instance_create(480,256,Obj_Ball);
+global.Ball = instance_create(630,256,Obj_Ball);
 global.player1 = instance_create(240,200,Obj_player);
 
 with(global.player1)
@@ -42,7 +42,7 @@ with(global.player1)
 
 GameScore = instance_create(x,y,Obj_Score_Manager);
 
-global.player2 = instance_create(1030,200,Obj_player);
+global.player2 = instance_create(1020,200,Obj_player);
 
 with(global.player2)
 {

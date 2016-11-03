@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>startXPosition = 500;
+            <string>startXPosition = 630;
 startYPosition = 360;
 
 phy_position_x = startXPosition;
