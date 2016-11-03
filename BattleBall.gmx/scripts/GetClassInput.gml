@@ -11,11 +11,11 @@ var thresh = 0.5;
 
 if(gamepad_is_connected(gp_id))
 {
-    var thresh = 0.5;
     up = gamepad_axis_value(gp_id, gp_axislv) < -thresh;   
     down = gamepad_axis_value(gp_id, gp_axislv) > thresh;
     left =  gamepad_axis_value(gp_id, gp_axislh) < -thresh;
-    right = gamepad_axis_value(gp_id, gp_axislh) > thresh;  
+    right = gamepad_axis_value(gp_id, gp_axislh) > thresh; 
+    btn_Y = gamepad_button_check_pressed(gp_id, gp_face4); 
     
     confirm = gamepad_button_check_pressed(gp_id,gp_face1);
     back = gamepad_button_check_pressed(gp_id,gp_face2);

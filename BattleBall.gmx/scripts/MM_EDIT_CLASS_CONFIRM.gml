@@ -1,0 +1,3 @@
+///MM_EDIT_CLASS_CONFIRM()
+//myMenuMode = MM_CHANGE_ITEM;
+//myDrawMode = MM_CHANGE_ITEM_DRAW;

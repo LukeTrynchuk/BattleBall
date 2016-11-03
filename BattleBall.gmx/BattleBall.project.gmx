@@ -52,6 +52,7 @@
   <sprites name="sprites">
     <sprites name="Title">
       <sprite>sprites\Title</sprite>
+      <sprite>sprites\Title_JustName</sprite>
     </sprites>
     <sprites name="Player">
       <sprite>sprites\player_walk</sprite>
@@ -138,6 +139,31 @@
         <sprite>sprites\Player1_Choose</sprite>
         <sprite>sprites\Player2_Choose</sprite>
       </sprites>
+      <sprites name="MainMenu">
+        <sprite>sprites\PlayGame</sprite>
+        <sprite>sprites\PlayGame_Selected</sprite>
+        <sprite>sprites\Quit</sprite>
+        <sprite>sprites\Quit_Selected</sprite>
+        <sprite>sprites\Choose_Class</sprite>
+        <sprite>sprites\Choose_Class_Selected</sprite>
+        <sprite>sprites\Item_Selector</sprite>
+        <sprite>sprites\back_panel</sprite>
+        <sprite>sprites\Blue_Grad</sprite>
+        <sprite>sprites\Red_Grad</sprite>
+        <sprite>sprites\Blue_Spark</sprite>
+        <sprite>sprites\Red_Spark</sprite>
+        <sprite>sprites\Purple_Spark</sprite>
+        <sprite>sprites\Item_Square</sprite>
+        <sprite>sprites\Item_Square_Red</sprite>
+        <sprite>sprites\Select_Square</sprite>
+        <sprite>sprites\Current_Class_Selector</sprite>
+      </sprites>
+    </sprites>
+    <sprites name="XboxOne Buttons">
+      <sprite>sprites\A_Button_One</sprite>
+      <sprite>sprites\B_Button_One</sprite>
+      <sprite>sprites\X_Button_One</sprite>
+      <sprite>sprites\Y_Button_One</sprite>
     </sprites>
     <sprites name="Xbox360 Controls">
       <sprite>sprites\A_Button_360</sprite>
@@ -188,11 +214,42 @@
         <script>scripts\InitOpacity.gml</script>
         <script>scripts\SetValues.gml</script>
         <script>scripts\ChangeWeapon.gml</script>
+        <script>scripts\Reset_Menu_Timer.gml</script>
         <script>scripts\FindValidPerk.gml</script>
         <script>scripts\Draw_ChosenPerks.gml</script>
         <script>scripts\SetDisplayGun.gml</script>
         <script>scripts\SetBars.gml</script>
         <script>scripts\SwitchPlayerGun.gml</script>
+        <scripts name="State">
+          <scripts name="Step">
+            <script>scripts\MM_CHANGE_ITEM.gml</script>
+            <script>scripts\MM_GAME_TYPE.gml</script>
+            <scripts name="MM_MAIN">
+              <script>scripts\MM_MAIN.gml</script>
+              <script>scripts\MM_MENU_PLAY_GAME.gml</script>
+              <script>scripts\MM_MENU_EDIT_CLASS.gml</script>
+              <script>scripts\MM_MENU_QUIT.gml</script>
+            </scripts>
+            <scripts name="MM_CHOOSE_CLASS">
+              <script>scripts\MM_CHOOSE_CLASS.gml</script>
+              <script>scripts\MM_CHOOSE_CLASS_CONFIRM.gml</script>
+              <script>scripts\MM_CHOOSE_CLASS_BACK.gml</script>
+            </scripts>
+            <scripts name="MM_EDIT_CLASS">
+              <script>scripts\MM_EDIT_CLASS.gml</script>
+              <script>scripts\MM_EDIT_CLASS_CONFIRM.gml</script>
+              <script>scripts\MM_EDIT_CLASS_BACK.gml</script>
+            </scripts>
+          </scripts>
+          <scripts name="Draw">
+            <script>scripts\MM_MAIN_DRAW.gml</script>
+            <script>scripts\MM_CHANGE_ITEM_DRAW.gml</script>
+            <script>scripts\MM_CHOOSE_CLASS_DRAW.gml</script>
+            <script>scripts\MM_EDIT_CLASS_DRAW.gml</script>
+            <script>scripts\MM_GAME_TYPE_DRAW.gml</script>
+          </scripts>
+          <script>scripts\DRAW_BARS.gml</script>
+        </scripts>
       </scripts>
       <script>scripts\Playhit.gml</script>
     </scripts>
@@ -200,6 +257,9 @@
   <fonts name="fonts">
     <font>fonts\Timer_Font</font>
     <font>fonts\Class_Choose_Font</font>
+    <font>fonts\Class_Choose_Current_Font</font>
+    <font>fonts\Class_Font_New_Menu</font>
+    <font>fonts\Main_Menu_Font</font>
   </fonts>
   <objects name="objects">
     <objects name="effects">
@@ -237,6 +297,7 @@
       <object>objects\Obj_Score_Manager</object>
       <objects name="Class_Choose">
         <object>objects\Obj_Class_Choose_Manager</object>
+        <object>objects\Obj_Test_Menu</object>
         <object>objects\Obj_ClassPlayer</object>
         <object>objects\Obj_Bar</object>
       </objects>

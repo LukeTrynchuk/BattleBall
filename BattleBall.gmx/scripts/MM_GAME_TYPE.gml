@@ -1,0 +1,1 @@
+///MM_GAME_TYPE()
