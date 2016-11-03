@@ -223,6 +223,7 @@
         <scripts name="State">
           <scripts name="Step">
             <script>scripts\MM_CHANGE_ITEM.gml</script>
+            <script>scripts\MM_GAME_TYPE.gml</script>
             <scripts name="MM_MAIN">
               <script>scripts\MM_MAIN.gml</script>
               <script>scripts\MM_MENU_PLAY_GAME.gml</script>
@@ -238,10 +239,6 @@
               <script>scripts\MM_EDIT_CLASS.gml</script>
               <script>scripts\MM_EDIT_CLASS_CONFIRM.gml</script>
               <script>scripts\MM_EDIT_CLASS_BACK.gml</script>
-            </scripts>
-            <scripts name="MM_GAME_TYPE">
-              <script>scripts\MM_GAME_TYPE.gml</script>
-              <script>scripts\MM_LAN_1V1.gml</script>
             </scripts>
           </scripts>
           <scripts name="Draw">
