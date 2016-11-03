@@ -158,7 +158,6 @@
     <instance objName="Obj_PillarTop" x="608" y="464" name="inst_F34DE6EA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_PillarTop" x="635" y="288" name="inst_068E4B18" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_Pillar" x="487" y="638" name="inst_3AB1C048" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="45"/>
-    <instance objName="Obj_Barrel" x="1065" y="330" name="inst_25C167D9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_PillarTop" x="193" y="353" name="inst_56C255E0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_PillarTop" x="281" y="141" name="inst_86CCECEA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_PillarTop" x="936" y="149" name="inst_9CFF3B33" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>

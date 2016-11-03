@@ -48,6 +48,9 @@ SniperExp = 123;                                                                
 PistolExp = 348;
 MachinegunExp = 50;
 MinigunExp = 230;
+
+global.Player1Gun = "Pistol";
+global.Player2Gun = "Pistol";
 </string>
           </argument>
         </arguments>
@@ -341,6 +344,30 @@ Current_Class_Option = 0;
           <argument>
             <kind>1</kind>
             <string>///MM_MENU_EDIT_CLASS variables
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///MM_GAME_TYPE variables
+Game_Type_Options[0] = "LAN 1v1";
+
+Current_Option = 0;
 </string>
           </argument>
         </arguments>
