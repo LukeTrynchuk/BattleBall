@@ -66,6 +66,16 @@ global.player2_score++;
 
 phy_position_x = startXPosition;
 phy_position_y = startYPosition;
+
+if phy_linear_velocity_x != 0
+   {
+   phy_linear_velocity_x = 0;
+   }
+if phy_linear_velocity_y != 0
+   {
+   phy_linear_velocity_y = 0;
+   }
+phy_angular_velocity = 0;
 Shake_Screen(5);
 </string>
           </argument>
