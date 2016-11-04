@@ -1,3 +1,3 @@
 ///MM_GAME_TYPE_CONFIRM()
-instance_destroy();
-room_goto(rm_Level_Select);
+myMenuMode = MM_LEVEL_SELECT;
+myDrawMode = MM_LEVEL_SELECT_DRAW;

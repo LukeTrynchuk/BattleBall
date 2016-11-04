@@ -80,13 +80,15 @@ myMenuMode = MM_MAIN;                                                           
                                                                                         //MM_EDIT_CLASS
                                                                                         //MM_CHANGE_ITEM
                                                                                         //MM_GAME_TYPE
+                                                                                        //MM_LEVEL_SELECT
                                                                                         
 myDrawMode = MM_MAIN_DRAW;                                                          //Set the current draw mode
                                                                                         //MM_MAIN_DRAW
                                                                                         //MM_CHOOSE_CLASS_DRAW
                                                                                         //MM_EDIT_CLASS_DRAW
                                                                                         //MM_CHANGE_ITEM_DRAW
-                                                                                        //MM_GAME_TYPE_DRAW
+                                                                                        //MM_GAME_TYPE_DRAW 
+                                                                                        //MM_LEVEL_SELECT
 
 </string>
           </argument>
@@ -343,6 +345,41 @@ CurrentPerk = 0;
             <string>///MM_CHANGE_ITEM variables
 CurrentItem = 0;                        //The current item we're highlighting
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///MM_LEVEL_SELECT variables
+Current_Levels[0] = "42 Clinton St";
+Current_Levels[1] = "Old Brick Building";
+Current_Levels[2] = "Rundown School";
+
+Level_Pics[0] = Old_Brick_Building;
+
+Option_Spr[0] = Clinton_St_Option;
+Option_Spr[1] = Clinton_St_Option_Chosen;
+Option_Spr[2] = Old_Brick_Building_Option;
+Option_Spr[3] = Old_Brick_Building_Option_Chosen;
+Option_Spr[4] = Rundown_School_Option;
+Option_Spr[5] = Rundown_School_Option_Chosen;
+
+Selected_Level = 0;
 </string>
           </argument>
         </arguments>

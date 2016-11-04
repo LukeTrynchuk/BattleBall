@@ -160,6 +160,17 @@
         <sprite>sprites\LAN_1v1</sprite>
         <sprite>sprites\LAN_1v1_Choose</sprite>
         <sprite>sprites\LAN1v1_Pic</sprite>
+        <sprites name="Level Select">
+          <sprite>sprites\Old_Brick_Building</sprite>
+          <sprite>sprites\Clinton_St_Option</sprite>
+          <sprite>sprites\Clinton_St_Option_Chosen</sprite>
+          <sprite>sprites\Old_Brick_Building_Option</sprite>
+          <sprite>sprites\Old_Brick_Building_Option_Chosen</sprite>
+          <sprite>sprites\Rundown_School_Option</sprite>
+          <sprite>sprites\Rundown_School_Option_Chosen</sprite>
+          <sprite>sprites\Clinton_St</sprite>
+          <sprite>sprites\Rundown_School</sprite>
+        </sprites>
       </sprites>
     </sprites>
     <sprites name="XboxOne Buttons">
@@ -251,6 +262,11 @@
               <script>scripts\MM_GAME_TYPE_CONFIRM.gml</script>
               <script>scripts\MM_GAME_TYPE_BACK.gml</script>
             </scripts>
+            <scripts name="MM_LEVEL_SELECT">
+              <script>scripts\MM_LEVEL_SELECT.gml</script>
+              <script>scripts\MM_LEVEL_SELECT_CONFIRM.gml</script>
+              <script>scripts\MM_LEVEL_SELECT_BACK.gml</script>
+            </scripts>
           </scripts>
           <scripts name="Draw">
             <script>scripts\MM_MAIN_DRAW.gml</script>
@@ -258,6 +274,7 @@
             <script>scripts\MM_CHOOSE_CLASS_DRAW.gml</script>
             <script>scripts\MM_EDIT_CLASS_DRAW.gml</script>
             <script>scripts\MM_GAME_TYPE_DRAW.gml</script>
+            <script>scripts\MM_LEVEL_SELECT_DRAW.gml</script>
           </scripts>
           <script>scripts\DRAW_BARS.gml</script>
         </scripts>
@@ -306,7 +323,6 @@
       <object>objects\Obj_Background_Music</object>
       <object>objects\Obj_Game_Timer</object>
       <object>objects\Obj_Game</object>
-      <object>objects\Obj_Level_Select_Manager</object>
       <object>objects\Obj_MainMenuManager</object>
       <object>objects\Obj_Score_Manager</object>
       <objects name="Class_Choose">
@@ -350,7 +366,6 @@
   <rooms name="rooms">
     <room>rooms\rm_menu</room>
     <room>rooms\rm_class_choose_screen</room>
-    <room>rooms\rm_Level_Select</room>
     <rooms name="Battle Rooms">
       <room>rooms\BattleRoom0</room>
       <room>rooms\BattleRoom1</room>
