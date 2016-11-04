@@ -171,6 +171,9 @@
           <sprite>sprites\Clinton_St</sprite>
           <sprite>sprites\Rundown_School</sprite>
         </sprites>
+        <sprites name="Game_Type">
+          <sprite>sprites\Error_Controllers</sprite>
+        </sprites>
       </sprites>
     </sprites>
     <sprites name="XboxOne Buttons">
@@ -217,6 +220,7 @@
     <scripts name="Input">
       <script>scripts\GetClassInput.gml</script>
       <script>scripts\GetInput.gml</script>
+      <script>scripts\Num_Controllers_Connected.gml</script>
     </scripts>
     <scripts name="Font">
       <script>scripts\Timer_Font_Script.gml</script>
@@ -307,6 +311,9 @@
       <objects name="ChargeEffect">
         <object>objects\Obj_Charge_eff_em</object>
         <object>objects\Obj_Charge_eff</object>
+      </objects>
+      <objects name="Errors">
+        <object>objects\Obj_Error_Controller</object>
       </objects>
     </objects>
     <objects name="Bullets">
