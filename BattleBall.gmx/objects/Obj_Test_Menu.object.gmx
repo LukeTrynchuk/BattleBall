@@ -284,6 +284,12 @@ Current_Class_Option = 0;
             <string>///MM_GAME_TYPE variables
 MM_GAME_TYPES[0] = "LAN 1V1";
 Current_Game_Type = 0;
+
+MM_GAME_TYPE_DESCRIPTIONS[0] = 
+"Play with your friends is the action packed 
+and fast paced 1v1 LAN games. 
+ 
+Note that this game type requires two local controllers.";
 </string>
           </argument>
         </arguments>

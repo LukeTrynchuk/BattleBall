@@ -157,6 +157,9 @@
         <sprite>sprites\Item_Square_Red</sprite>
         <sprite>sprites\Select_Square</sprite>
         <sprite>sprites\Current_Class_Selector</sprite>
+        <sprite>sprites\LAN_1v1</sprite>
+        <sprite>sprites\LAN_1v1_Choose</sprite>
+        <sprite>sprites\LAN1v1_Pic</sprite>
       </sprites>
     </sprites>
     <sprites name="XboxOne Buttons">
@@ -267,6 +270,7 @@
     <font>fonts\Class_Font_New_Menu</font>
     <font>fonts\Main_Menu_Font</font>
     <font>fonts\Perk_Desc_Font</font>
+    <font>fonts\Game_Descriptions</font>
   </fonts>
   <objects name="objects">
     <objects name="effects">

@@ -7,9 +7,7 @@ if((up || down) && CanSwitchClass)                                              
     if(down) chooseDirection = 1;                                                               //Change the direction
     
     Current_Class_Option += chooseDirection;                                                    //Increment by the direction
-    
-    if(Current_Class_Option >= array_length_1d(myClasses)) Current_Class_Option = 0;            //Clamp
-    if(Current_Class_Option < 0) Current_Class_Option = array_length_1d(myClasses) - 1;         //Clamp
+    Current_Class_Option = clamp(Current_Class_Option, 0, array_length_1d(myClasses) - 1);      //clamp the value
     
     Reset_Menu_Timer();                                                                         //Reset the timer
 }

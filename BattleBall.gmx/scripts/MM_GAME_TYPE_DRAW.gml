@@ -3,33 +3,30 @@ draw_set_font(Main_Menu_Font);                                                  
 DRAW_BARS();
 
 draw_set_font(Class_Font_New_Menu);                                                 //Set the font
-var Class_NotChosenColor = make_colour_rgb(255,255,255);
-var Class_ChosenColor = make_color_rgb(0,0,0);
 draw_text_colour(20, 20, "CHOOSE GAME TYPE", c_white, c_white, c_white, c_white, 1);    //Draw the instructions
 
-
-//Draw the classes on the side
-var Box_Not_Chosen_col = make_colour_rgb(20,20,20);
-var Box_Chosen_col = make_colour_rgb(252, 175, 65);
-
-var Class_X_Start = 60;
-var Class_Y_Start = 200;
-var Class_Offset = 60;
+var Option_X = room_width / 7;
+var Option_Y = room_width  /5;
+var Option_Offset = 60;
 var Chosen_Offset = 25;
+var Scale = 0.5;
 
-//draw_sprite_ext(Current_Class_Selector, 0, Class_X_Start + 75, Class_Y_Start + Class_Offset * global.Current_Class + 10, 1,1,0,c_white, 0.6);
-
-for(var CurrentType = 0; CurrentType < array_length_1d(MM_GAME_TYPES); CurrentType++)
+switch(Current_Game_Type)
 {
-    if(CurrentType != Current_Game_Type)
-    {
-        draw_line_width_colour(Class_X_Start - 10, Class_Y_Start + Class_Offset * CurrentType + 10, string_width(MM_GAME_TYPES[Current_Game_Type]) + Class_X_Start + 5, Class_Y_Start + Class_Offset * CurrentType + 10, 45, Box_Not_Chosen_col,Box_Not_Chosen_col);
-        draw_text_colour(Class_X_Start, Class_Y_Start + Class_Offset * CurrentType, MM_GAME_TYPES[Current_Game_Type], Class_NotChosenColor, Class_NotChosenColor, Class_NotChosenColor, Class_NotChosenColor, 1);
-    }
-    else
-    {
-        draw_line_width_colour(Class_X_Start - 10 - Chosen_Offset, Class_Y_Start + Class_Offset * CurrentType + 10, string_width(MM_GAME_TYPES[Current_Game_Type]) + Class_X_Start + 5 - Chosen_Offset, Class_Y_Start + Class_Offset * CurrentType + 10, 45, Box_Chosen_col,Box_Chosen_col);
-        draw_text_colour(Class_X_Start - Chosen_Offset, Class_Y_Start + Class_Offset * CurrentType, MM_GAME_TYPES[Current_Game_Type], Class_ChosenColor, Class_ChosenColor, Class_ChosenColor, Class_ChosenColor, 1);
-    }
+    case 0:
+        draw_sprite_ext(LAN_1v1_Choose, 0, Option_X - 70 - Chosen_Offset, Option_Y, Scale, Scale, 0, c_white, 1);                    //Lan 1v1
+        break;
 }
 
+draw_sprite_ext(Item_Selector, 0, Option_X  - Chosen_Offset - 200, Option_Y + Current_Game_Type * Option_Offset, Scale,Scale,0, c_white, 1);    //Selector
+
+//Seperator
+var Seperator_Col = make_colour_rgb(83,83,83);
+draw_line_width_colour(Option_X + Option_Offset, Option_Y - 15, Option_X + Option_Offset, Option_Y + 400, 2, Seperator_Col, Seperator_Col);  //Draw the seperator between the options and the items
+
+draw_set_font(Game_Descriptions);
+draw_set_colour_write_enable(255,255,255,1);
+
+draw_text_colour(room_width / 4 * 1.5,room_height / 2,  MM_GAME_TYPE_DESCRIPTIONS[Current_Game_Type], c_white, c_white, c_white, c_white, 1);
+
+draw_sprite_ext(LAN1v1_Pic, 0, room_width / 2, room_height / 3, 1,1,0, c_white, 1);

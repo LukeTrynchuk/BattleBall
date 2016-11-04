@@ -7,10 +7,7 @@ if((up || down) && CanSwitchClass)
     if(down) chooseDirection = 1;                                                                      //Change the direction
     
     Current_Selected_Option += chooseDirection;                                                         //Set the change
-    
-    if(Current_Selected_Option >= array_length_1d(MM_MENU_OPTIONS)) Current_Selected_Option = 0;        //Allow for upward movement
-    if(Current_Selected_Option < 0) Current_Selected_Option = array_length_1d(MM_MENU_OPTIONS) - 1;     //Allow for downward movement
-    
+    Current_Selected_Option = clamp(Current_Selected_Option, 0, array_length_1d(MM_MENU_OPTIONS) - 1);  //Clamp the values 
     Reset_Menu_Timer();                                                                                 //Reest the timer
 }
 else if (confirm && CanSwitchClass)
