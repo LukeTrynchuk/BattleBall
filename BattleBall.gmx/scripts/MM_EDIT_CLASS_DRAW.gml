@@ -76,25 +76,25 @@ switch(myEditingType)
     case EditingType.PERKS:
         draw_sprite_ext(Select_Square, 0,Perk_X + Perk_Offset * CurrentPerk, Perk_Y, 1,1,0,c_white, 1);
         Message = "";
-        switch(global.Class_Perk[global.Current_Class * 2 + CurrentPerk])
+        switch(global.Class_Perk[Current_Class_Option * 2 + CurrentPerk])
         {
             case "TripleJumpPerk":
-                Message = global.Perk_Desc[0];
+                Message = global.Perk_Name[0];
                 break;
             case "RateOfFirePerk":
-                Message = global.Perk_Desc[1];
+                Message = global.Perk_Name[1];
                 break;
             case "ExtraExplosivePerk":
-                Message = global.Perk_Desc[2];
+                Message = global.Perk_Name[2];
                 break;
             case "DashCooldownPerk":
-                Message = global.Perk_Desc[3];
+                Message = global.Perk_Name[3];
                 break;
             case "Aim8DirPerk":
-                Message = global.Perk_Desc[4];
+                Message = global.Perk_Name[4];
                 break;
             case "SmashPerk":
-                Message = global.Perk_Desc[5];
+                Message = global.Perk_Name[5];
                 break;
         }
         draw_set_font(Perk_Desc_Font);

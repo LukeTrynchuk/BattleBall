@@ -227,6 +227,8 @@
           <scripts name="Step">
             <scripts name="MM_CHANGE_ITEM">
               <script>scripts\MM_CHANGE_ITEM.gml</script>
+              <script>scripts\MM_CHANGE_ITEM_CONFIRM.gml</script>
+              <script>scripts\MM_CHANGE_ITEM_BACK.gml</script>
             </scripts>
             <scripts name="MM_MAIN">
               <script>scripts\MM_MAIN.gml</script>
@@ -271,6 +273,7 @@
     <font>fonts\Main_Menu_Font</font>
     <font>fonts\Perk_Desc_Font</font>
     <font>fonts\Game_Descriptions</font>
+    <font>fonts\Item_Description</font>
   </fonts>
   <objects name="objects">
     <objects name="effects">

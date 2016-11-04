@@ -8,8 +8,7 @@ if((left || right) && CanSwitchClass)                                           
     
     CurrentPerk += chooseDirection;                                                    //Increment by the direction
     
-    if(CurrentPerk >= 2) CurrentPerk = 0;            //Clamp
-    if(CurrentPerk < 0) CurrentPerk = 1;         //Clamp
+    CurrentPerk = clamp(CurrentPerk, 0, 1);
     
     Reset_Menu_Timer();                                                                         //Reset the timer
 }

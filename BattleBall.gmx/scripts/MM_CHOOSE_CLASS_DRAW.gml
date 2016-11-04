@@ -47,7 +47,7 @@ draw_text_colour(600, 100, myClasses[Current_Class_Option], c_white, c_white, c_
 //Draw the gun sprite based on the current hovered class
 var Gun_X = 675;
 var Gun_Y = 350;
-draw_sprite_ext(Item_Square_Red, 0,Gun_X, Gun_Y, 1.2,1.2,0,c_white, 1);                                             //Draw the gun item square
+//draw_sprite_ext(Item_Square_Red, 0,Gun_X, Gun_Y, 1.2,1.2,0,c_white, 1);                                             //Draw the gun item square
 switch(global.Class_Gun[Current_Class_Option])                                                          //Draw the different appropriate gun sprites
 {
     case "Pistol":
@@ -68,9 +68,6 @@ switch(global.Class_Gun[Current_Class_Option])                                  
 var Perk_X = 575;
 var Perk_Y = 550;
 var Perk_Offset = 200;
-
-draw_sprite_ext(Item_Square, 0,Perk_X, Perk_Y, 1.2,1.2,0,c_white, 1);                                             //Draw the gun item square
-draw_sprite_ext(Item_Square, 0,Perk_X + Perk_Offset, Perk_Y, 1.2,1.2,0,c_white, 1);                                             //Draw the gun item square
 
 for(var NumPerks = 0; NumPerks < 2; NumPerks++)                                                         //Draw the perks
 {
