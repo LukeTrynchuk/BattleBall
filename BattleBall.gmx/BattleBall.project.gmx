@@ -17,6 +17,11 @@
     </sounds>
     <sounds name="Movement">
       <sound>sound\player_footstep</sound>
+      <sound>sound\player_footstep_gravel</sound>
+      <sound>sound\player_footstep_metal_2</sound>
+      <sound>sound\player_footstep_metal_1</sound>
+      <sound>sound\player_footstep_metal_3</sound>
+      <sound>sound\player_footstep_wood</sound>
       <sound>sound\SWIPE_Whoosh_02</sound>
       <sound>sound\FOOTSTEPS__E__Running_Loop_05</sound>
       <sound>sound\POP_Sucker_04</sound>
@@ -49,6 +54,7 @@
         <sound>sound\snd_Switch</sound>
       </sounds>
       <sounds name="Countdown">
+        <sound>sound\GAME_COUNTDOWN_BATTLE</sound>
         <sound>sound\GAME_COUNTDOWN</sound>
       </sounds>
     </sounds>
@@ -64,7 +70,6 @@
       <sound>sound\MM_Music1</sound>
       <sound>sound\MM_Music3</sound>
     </sounds>
-    <sound>sound\GAME_COUNTDOWN_BATTLE</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="Title">
@@ -430,7 +435,11 @@
         <object>objects\Obj_rubbish2</object>
         <object>objects\Obj_Fence</object>
       </objects>
-      <object>objects\obj_metal</object>
+      <objects name="Material Types">
+        <object>objects\obj_metal</object>
+        <object>objects\obj_wood</object>
+        <object>objects\obj_gravel</object>
+      </objects>
     </objects>
     <objects name="Player">
       <object>objects\Obj_player</object>

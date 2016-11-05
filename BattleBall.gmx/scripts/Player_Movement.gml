@@ -2,6 +2,7 @@
 //NOTE: GameMaker's y coords are flipped (-1 = up)
 IsMoving = false;                                                   //The player is not moving so far
 
+
 spd = haxis * 6
 
 if(haxis < .2 && haxis > -.2) 
@@ -17,7 +18,29 @@ else
         isPlayingWalkingSound = true;
         audio_emitter_position(audio_em,0,0,0);
         audio_emitter_gain(audio_em, 0.1);
-        audio_play_sound_on(audio_em, player_footstep, true,5);
+        
+        if(place_meeting(x,y + 1, obj_gravel))
+        {
+            audio_play_sound_on(audio_em, player_footstep_gravel, true, 5);
+        }
+        else if(place_meeting(x,y + 1, obj_wood))
+        {
+            audio_play_sound_on(audio_em, player_footstep_wood, true, 5);
+        }
+        else if(place_meeting(x,y + 1, obj_metal))
+        {
+            if(Can_Play_Metal_Sound)
+            {
+                audio_emitter_pitch(audio_em, random_range(0.9, 1.1));
+                audio_play_sound_on(audio_em,choose( player_footstep_metal_1, player_footstep_metal_2, player_footstep_metal_3), false, 5);
+                Can_Play_Metal_Sound = false;
+                alarm[9] = Metal_Sound_Time;
+            }
+        }
+        else
+        {
+            audio_play_sound_on(audio_em, player_footstep, true,5);
+        }
      }
 }
 
@@ -65,6 +88,8 @@ if(haxis = 0)
     {
         isPlayingWalkingSound = false;
         audio_stop_sound(player_footstep);
+        audio_stop_sound(player_footstep_gravel);
+        audio_stop_sound(player_footstep_wood);
     }
 }
 
@@ -76,7 +101,15 @@ SolidContactLastFrame = SolidContactThisFrame;
 if(place_meeting(x,y+1,Obj_Solid) || (place_meeting(x,y+1,Obj_Ball) && global.Ball.y > y)) //If there is a meeting below the player with a Obj_Solid or Obj_Ball
 {
     SolidContactThisFrame = true;    
-
+    if(place_meeting(phy_position_x,phy_position_y +1,obj_metal) && !place_meeting(phy_position_xprevious, phy_position_yprevious + 1, obj_metal))
+    {
+        audio_emitter_gain(audio_em, 0.1);
+        audio_emitter_pitch(audio_em, random_range(0.9, 1.1));
+        audio_play_sound_on(audio_em,choose( player_footstep_metal_1, player_footstep_metal_2, player_footstep_metal_3), false, 5);
+        Can_Play_Metal_Sound = false;
+        alarm[9] = Metal_Sound_Time;
+    }
+    
 }
 else
 {
@@ -87,6 +120,8 @@ else
     {   
         isPlayingWalkingSound = false;
         audio_stop_sound(player_footstep);
+        audio_stop_sound(player_footstep_gravel);
+        audio_stop_sound(player_footstep_wood);
     }
 }
 

@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>audio_em = audio_emitter_create();
-audio_emitter_gain(audio_em, 0.3);
+audio_emitter_gain(audio_em, 0.15);
 audio_play_sound_on(audio_em, BATTLE_MUSIC_1, true,3);
 </string>
           </argument>
