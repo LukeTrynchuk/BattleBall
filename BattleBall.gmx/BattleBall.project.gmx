@@ -206,7 +206,10 @@
       <sprite>sprites\Minigun</sprite>
       <sprite>sprites\Sniper</sprite>
     </sprites>
-    <sprite>sprites\sprite66</sprite>
+    <sprites name="Company">
+      <sprite>sprites\Loogaroo_Logo</sprite>
+      <sprite>sprites\DogHouse_Logo</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -356,6 +359,7 @@
         <object>objects\Obj_GunBar</object>
       </objects>
       <object>objects\Obj_Class_Manager</object>
+      <object>objects\Obj_Logo_Manager</object>
     </objects>
     <objects name="Level">
       <object>objects\Obj_Ball</object>
@@ -388,6 +392,7 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_logo</room>
     <room>rooms\rm_menu</room>
     <room>rooms\rm_class_choose_screen</room>
     <rooms name="Battle Rooms">
