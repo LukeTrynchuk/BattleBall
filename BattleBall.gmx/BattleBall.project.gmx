@@ -139,10 +139,30 @@
         <sprite>sprites\spr_chargeup_par</sprite>
       </sprites>
       <sprites name="Count_down">
-        <sprite>sprites\Glitch_3</sprite>
-        <sprite>sprites\Glitch_2</sprite>
-        <sprite>sprites\Glitch_1</sprite>
-        <sprite>sprites\Glitch_Battle</sprite>
+        <sprites name="1">
+          <sprite>sprites\Glitch_1</sprite>
+          <sprite>sprites\Glitch_1_3</sprite>
+          <sprite>sprites\Glitch_1_1</sprite>
+          <sprite>sprites\Glitch_1_2</sprite>
+        </sprites>
+        <sprites name="3">
+          <sprite>sprites\Glitch_3</sprite>
+          <sprite>sprites\Glitch_3_3</sprite>
+          <sprite>sprites\Glitch_3_1</sprite>
+          <sprite>sprites\Glitch_3_2</sprite>
+        </sprites>
+        <sprites name="2">
+          <sprite>sprites\Glitch_2_2</sprite>
+          <sprite>sprites\Glitch_2_1</sprite>
+          <sprite>sprites\Glitch_2</sprite>
+          <sprite>sprites\Glitch_2_3</sprite>
+        </sprites>
+        <sprites name="Battle">
+          <sprite>sprites\Glitch_Battle_2</sprite>
+          <sprite>sprites\Glitch_Battle_3</sprite>
+          <sprite>sprites\Glitch_Battle</sprite>
+          <sprite>sprites\Glitch_Battle_1</sprite>
+        </sprites>
       </sprites>
     </sprites>
     <sprites name="Menu Items">
@@ -234,18 +254,6 @@
       <sprite>sprites\Loogaroo_Logo</sprite>
       <sprite>sprites\DogHouse_Logo</sprite>
     </sprites>
-    <sprite>sprites\Glitch_1_2</sprite>
-    <sprite>sprites\Glitch_1_3</sprite>
-    <sprite>sprites\Glitch_2_1</sprite>
-    <sprite>sprites\Glitch_2_2</sprite>
-    <sprite>sprites\Glitch_2_3</sprite>
-    <sprite>sprites\Glitch_3_1</sprite>
-    <sprite>sprites\Glitch_3_2</sprite>
-    <sprite>sprites\Glitch_3_3</sprite>
-    <sprite>sprites\Glitch_Battle_1</sprite>
-    <sprite>sprites\Glitch_Battle_2</sprite>
-    <sprite>sprites\Glitch_Battle_3</sprite>
-    <sprite>sprites\Glitch_1_1</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>

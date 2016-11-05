@@ -173,10 +173,6 @@ RocketKickBack = 1000;                          //How much kickback the rocket g
 alarm[0] = Rate_Of_Fire_Pistol;                //Set rate of fire
 ShotKickBack = PistolGunKickBack;              //Assigning the players current kickback
 
-//8 Dir aiming
-Aim_8_Dir = false;
-
-
 //Charge up shot
 CurrentCharge = 0;                              //The current charge of the powerup shot
 MaxCharge = 1;                                  //The maximum charge for the shot
@@ -672,18 +668,6 @@ if(right_trigger &amp;&amp; canShoot)                                           
         dir = other.image_xscale;
         image_xscale = other.image_xscale;
     }
-    if(Aim_8_Dir)
-    {
-        with(inst)
-        {
-            Aim8Dir = true;
-            AimX = other.haxis;
-            AimY = other.vaxis;
-            myangle = point_direction(0, 0, AimX, AimY); 
-            image_angle = myangle;
-        }
-    }
-    
     
     canShoot = false;                                                                                                   //The player cannot shoot again
     alarm[0] = ShootTimer;                                                                                              //Set the alarm to the shoot timer
@@ -964,9 +948,6 @@ if(!hasPerks)
             break;
         case "DashCooldownPerk" :                //Dash cool down (x.75)
             dash_cool_down *= .75;
-            break;
-        case "Aim8DirPerk" :                //Aim in 8 directions
-            Aim_8_Dir = true;  
             break;
         case "SmashPerk" :                //Smash attack
             smash_attack = true;

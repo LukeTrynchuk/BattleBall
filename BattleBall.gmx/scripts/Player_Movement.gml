@@ -42,7 +42,7 @@ else
 
 if(haxis > 0)                                                           //If we have pressed right
 {
-     if(!right_trigger || Aim_8_Dir)
+     if(!right_trigger)
      {
         image_xscale = 1;
      }
@@ -52,7 +52,7 @@ if(haxis > 0)                                                           //If we 
 
 if(haxis < 0)                                                            //If we have pressed the a key
 {
-     if(!right_trigger  || Aim_8_Dir)
+     if(!right_trigger)
      {
         image_xscale = -1;
      }
