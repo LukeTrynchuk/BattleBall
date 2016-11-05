@@ -5,6 +5,7 @@ GetClassInput();                                                                
 
 if((left || right) && CanSwitchClass)                                                              //If the player is changing the selection
 {
+    var LastItem = CurrentPerk;
     var chooseDirection = -1;                                                                   //Set the direction
     if(right) chooseDirection = 1;                                                               //Change the direction
     
@@ -14,7 +15,7 @@ if((left || right) && CanSwitchClass)                                           
     
     SetBars();                                                                                   //Set the stat bars
     SetGunBars();                                                                                //Set the gun stat bars
-    
+    if(LastItem != CurrentPerk) Playhit(snd_Switch, audio_em);
     Reset_Menu_Timer();                                                                         //Reset the timer
 }
 else if (confirm)                                                             //If the player is going confirming

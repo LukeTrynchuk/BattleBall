@@ -10,14 +10,16 @@ if((up || down) && CanSwitchClass)                                              
     var chooseDirection = -1;                                                                   //Set the direction
     if(down) chooseDirection = 1;                                                               //Change the direction
     
+    var LastItem = Current_Class_Option;
     Current_Class_Option += chooseDirection;                                                    //Increment by the direction
     Current_Class_Option = clamp(Current_Class_Option, 0, array_length_1d(myClasses) - 1);      //clamp the value
     
-    
+    if(LastItem != Current_Class_Option) Playhit(snd_Switch, audio_em);
     Reset_Menu_Timer();                                                                         //Reset the timer
 }
 else if (btn_Y)
 {
+    Playhit(snd_fight, audio_em);
     global.Current_Class = Current_Class_Option;                                                //Set the new class
     Reset_Menu_Timer();
 }

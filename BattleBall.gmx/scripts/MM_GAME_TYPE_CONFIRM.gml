@@ -4,6 +4,7 @@ if(gamepad_is_connected(0))
     var Num = gamepad_get_device_count();
     if(Num_Controllers_Connected() == 2)
     {
+        Playhit(snd_fight, audio_em);
         myMenuMode = MM_LEVEL_SELECT;
         myDrawMode = MM_LEVEL_SELECT_DRAW;
     }

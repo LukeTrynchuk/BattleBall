@@ -130,7 +130,7 @@ alarm[2] = Gradient_Time * (1.0 - Gradient_Time_Offset);                        
 
 ///Initialize particle
 sparks = part_system_create();                          //Create our particle system
-part_system_depth(sparks, 20);                          //Set the depth of the object (draw order, a depth of -1 will be drawn after a depth of 1)
+part_system_depth(sparks, 1000);                          //Set the depth of the object (draw order, a depth of -1 will be drawn after a depth of 1)
 
 //create a snow flake particle
 individual_spark = part_type_create();                  //Create a particle - Basic settings
@@ -155,7 +155,7 @@ part_emitter_stream(sparks,sparks_emitter,individual_spark, -20);
 
 ///Initialize particle
 sparks2 = part_system_create();                          //Create our particle system
-part_system_depth(sparks, 20);                          //Set the depth of the object (draw order, a depth of -1 will be drawn after a depth of 1)
+part_system_depth(sparks2, 1000);                          //Set the depth of the object (draw order, a depth of -1 will be drawn after a depth of 1)
 
 //create a snow flake particle
 individual_spark2 = part_type_create();                  //Create a particle - Basic settings
@@ -392,6 +392,32 @@ Selected_Level = 0;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Sound variables
+
+audio_em = audio_emitter_create();          //Create our audio emitter
+audio_music_em = audio_emitter_create();
+audio_play_sound_on(audio_em, MM_Crackle, true, 1);
+Play_Background_Music();
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="1" enumb="0">
       <action>
@@ -412,6 +438,8 @@ Selected_Level = 0;
             <kind>1</kind>
             <string>part_system_destroy(sparks);
 part_system_destroy(sparks2);
+audio_emitter_free(audio_em);
+audio_emitter_free(audio_music_em);
 </string>
           </argument>
         </arguments>

@@ -1,4 +1,5 @@
 ///MM_LEVEL_SELECT_CONFIRM()
+Playhit(snd_fight, audio_em);
 switch(Selected_Level)
 {
     case 0:

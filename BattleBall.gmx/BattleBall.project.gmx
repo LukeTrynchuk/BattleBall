@@ -48,6 +48,18 @@
         <sound>sound\snd_Switch</sound>
       </sounds>
     </sounds>
+    <sounds name="Main Menu">
+      <sound>sound\MM_Music4</sound>
+      <sound>sound\MM_Music7</sound>
+      <sound>sound\MM_Back</sound>
+      <sound>sound\MM_Music8</sound>
+      <sound>sound\MM_Music2</sound>
+      <sound>sound\MM_Music6</sound>
+      <sound>sound\MM_Crackle</sound>
+      <sound>sound\MM_Music5</sound>
+      <sound>sound\MM_Music1</sound>
+      <sound>sound\MM_Music3</sound>
+    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprites name="Title">
@@ -284,6 +296,8 @@
           </scripts>
           <script>scripts\DRAW_BARS.gml</script>
         </scripts>
+        <script>scripts\Play_Background_Music.gml</script>
+        <script>scripts\Update_Class_Perks.gml</script>
       </scripts>
       <script>scripts\Playhit.gml</script>
     </scripts>

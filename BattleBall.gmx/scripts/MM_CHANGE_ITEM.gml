@@ -3,6 +3,7 @@ GetClassInput();
 
 if((up || down) && CanSwitchClass)
 {
+    var LastItem = CurrentItem;
     var chooseDirection = -1;                                                                            //The direcitonal change
     if(down) chooseDirection = 1;                                                                        //Change the direction
     
@@ -12,9 +13,9 @@ if((up || down) && CanSwitchClass)
     {
         case EditingType.PERKS:
             CurrentItem = clamp(CurrentItem, 0, array_length_1d(global.Perks) -1);
+            if(LastItem != CurrentItem) Playhit(snd_Switch, audio_em);
             break;
     }
-    
     Reset_Menu_Timer();                                                                                 //Reset the timer
 }
 else if (confirm)
