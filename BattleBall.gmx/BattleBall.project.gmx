@@ -24,6 +24,7 @@
     </sounds>
     <sounds name="Music">
       <sound>sound\snd_Music_Test</sound>
+      <sound>sound\BATTLE_MUSIC_1</sound>
     </sounds>
     <sounds name="Effects">
       <sound>sound\snd_score</sound>
@@ -47,6 +48,9 @@
         <sound>sound\snd_fight</sound>
         <sound>sound\snd_Switch</sound>
       </sounds>
+      <sounds name="Countdown">
+        <sound>sound\GAME_COUNTDOWN</sound>
+      </sounds>
     </sounds>
     <sounds name="Main Menu">
       <sound>sound\MM_Music4</sound>
@@ -60,6 +64,7 @@
       <sound>sound\MM_Music1</sound>
       <sound>sound\MM_Music3</sound>
     </sounds>
+    <sound>sound\GAME_COUNTDOWN_BATTLE</sound>
   </sounds>
   <sprites name="sprites">
     <sprites name="Title">
@@ -132,6 +137,12 @@
       </sprites>
       <sprites name="Particles">
         <sprite>sprites\spr_chargeup_par</sprite>
+      </sprites>
+      <sprites name="Count_down">
+        <sprite>sprites\Glitch_3</sprite>
+        <sprite>sprites\Glitch_2</sprite>
+        <sprite>sprites\Glitch_1</sprite>
+        <sprite>sprites\Glitch_Battle</sprite>
       </sprites>
     </sprites>
     <sprites name="Menu Items">
@@ -223,6 +234,18 @@
       <sprite>sprites\Loogaroo_Logo</sprite>
       <sprite>sprites\DogHouse_Logo</sprite>
     </sprites>
+    <sprite>sprites\Glitch_1_2</sprite>
+    <sprite>sprites\Glitch_1_3</sprite>
+    <sprite>sprites\Glitch_2_1</sprite>
+    <sprite>sprites\Glitch_2_2</sprite>
+    <sprite>sprites\Glitch_2_3</sprite>
+    <sprite>sprites\Glitch_3_1</sprite>
+    <sprite>sprites\Glitch_3_2</sprite>
+    <sprite>sprites\Glitch_3_3</sprite>
+    <sprite>sprites\Glitch_Battle_1</sprite>
+    <sprite>sprites\Glitch_Battle_2</sprite>
+    <sprite>sprites\Glitch_Battle_3</sprite>
+    <sprite>sprites\Glitch_1_1</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -347,6 +370,7 @@
       <objects name="Errors">
         <object>objects\Obj_Error_Controller</object>
       </objects>
+      <object>objects\Obj_Countdown</object>
     </objects>
     <objects name="Bullets">
       <object>objects\Obj_Bullet_Parent</object>
