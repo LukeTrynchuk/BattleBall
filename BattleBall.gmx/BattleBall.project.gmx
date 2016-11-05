@@ -352,7 +352,6 @@
       <object>objects\Obj_MainMenuManager</object>
       <object>objects\Obj_Score_Manager</object>
       <objects name="Class_Choose">
-        <object>objects\Obj_Class_Choose_Manager</object>
         <object>objects\Obj_Test_Menu</object>
         <object>objects\Obj_ClassPlayer</object>
         <object>objects\Obj_Bar</object>
