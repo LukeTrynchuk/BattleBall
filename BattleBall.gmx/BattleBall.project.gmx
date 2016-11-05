@@ -81,6 +81,9 @@
         <sprite>sprites\player_jump_p2</sprite>
         <sprite>sprites\Player2_ID</sprite>
       </sprites>
+      <sprite>sprites\Player_Head</sprite>
+      <sprite>sprites\Player_Head_Box</sprite>
+      <sprite>sprites\Player_Head_Box_2</sprite>
     </sprites>
     <sprites name="Level">
       <sprite>sprites\solid_block</sprite>
@@ -152,6 +155,7 @@
       </sprites>
       <sprites name="Class_Colors">
         <sprite>sprites\Seperator</sprite>
+        <sprite>sprites\Top_Banner</sprite>
       </sprites>
       <sprites name="Button">
         <sprite>sprites\Fight</sprite>
