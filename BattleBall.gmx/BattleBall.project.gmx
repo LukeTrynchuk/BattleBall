@@ -3,7 +3,7 @@
   <Configs name="configs">
     <Config>Configs\Default</Config>
   </Configs>
-  <datafiles number="2" name="datafiles"/>
+  <datafiles number="3" name="datafiles"/>
   <NewExtensions/>
   <sounds name="sound">
     <sounds name="Gun Sounds">
@@ -33,7 +33,6 @@
     </sounds>
     <sounds name="Effects">
       <sound>sound\snd_score</sound>
-      <sound>sound\metal_ping1</sound>
       <sounds name="Explosions">
         <sound>sound\snd_explosion1</sound>
         <sound>sound\snd_explosion2</sound>
@@ -56,6 +55,10 @@
       <sounds name="Countdown">
         <sound>sound\GAME_COUNTDOWN_BATTLE</sound>
         <sound>sound\GAME_COUNTDOWN</sound>
+      </sounds>
+      <sounds name="Bullet_Impact">
+        <sound>sound\metal_ping1</sound>
+        <sound>sound\Bullet_Dirt_hit</sound>
       </sounds>
     </sounds>
     <sounds name="Main Menu">
