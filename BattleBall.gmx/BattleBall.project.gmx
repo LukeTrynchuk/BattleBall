@@ -174,6 +174,7 @@
         <sprites name="Game_Type">
           <sprite>sprites\Error_Controllers</sprite>
         </sprites>
+        <sprite>sprites\Flag_End</sprite>
       </sprites>
     </sprites>
     <sprites name="XboxOne Buttons">
@@ -237,6 +238,7 @@
         <script>scripts\Draw_ChosenPerks.gml</script>
         <script>scripts\SetDisplayGun.gml</script>
         <script>scripts\SetBars.gml</script>
+        <script>scripts\SetGunBars.gml</script>
         <script>scripts\SwitchPlayerGun.gml</script>
         <scripts name="State">
           <scripts name="Step">
@@ -337,6 +339,7 @@
         <object>objects\Obj_Test_Menu</object>
         <object>objects\Obj_ClassPlayer</object>
         <object>objects\Obj_Bar</object>
+        <object>objects\Obj_GunBar</object>
       </objects>
       <object>objects\Obj_Class_Manager</object>
     </objects>

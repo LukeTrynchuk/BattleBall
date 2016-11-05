@@ -42,7 +42,7 @@ switch(global.Class_Gun[Current_Class_Option])                                  
 }
 
 var Perk_X = 575;
-var Perk_Y = 550;
+var Perk_Y = 650;
 var Perk_Offset = 200;
 
 draw_sprite_ext(Item_Square, 0,Perk_X, Perk_Y, 1.2,1.2,0,c_white, 1);                                             //Draw the gun item square
@@ -53,19 +53,54 @@ for(var NumPerks = 0; NumPerks < 2; NumPerks++)                                 
     switch(global.Class_Perk[Current_Class_Option * 2 + NumPerks])
     {
         case "TripleJumpPerk":
-            draw_sprite_ext(TripleJumpPerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 1);
+            if(CurrentPerk == NumPerks)
+            {
+                draw_sprite_ext(TripleJumpPerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 1);
+            }
+            else
+            {
+                draw_sprite_ext(TripleJumpPerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 0.6);
+            }
             break;
         case "RateOfFirePerk":
-            draw_sprite_ext(RateOfFirePerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 1);
+            if(CurrentPerk == NumPerks)
+            {
+                draw_sprite_ext(RateOfFirePerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 1);
+            }
+            else
+            {
+                draw_sprite_ext(RateOfFirePerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 0.6);
+            }
             break;
         case "ExtraExplosivePerk":
-            draw_sprite_ext(ExtraExplosivePerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 1);
+            if(CurrentPerk == NumPerks)
+            {
+                draw_sprite_ext(ExtraExplosivePerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 1);
+            }
+            else
+            {
+                draw_sprite_ext(ExtraExplosivePerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 0.6);
+            }
             break;
         case "DashCooldownPerk":
-            draw_sprite_ext(DashCooldownPerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 1);
+            if(CurrentPerk == NumPerks)
+            {
+                draw_sprite_ext(DashCooldownPerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 1);
+            }
+            else
+            {
+                draw_sprite_ext(DashCooldownPerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 0.6);
+            }
             break;
         case "SmashPerk":
-            draw_sprite_ext(SmashPerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 1);
+            if(CurrentPerk == NumPerks)
+            {
+                draw_sprite_ext(SmashPerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 1);
+            }
+            else
+            {
+                draw_sprite_ext(SmashPerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 0.6);
+            }
             break;
     }
 }
@@ -74,30 +109,46 @@ for(var NumPerks = 0; NumPerks < 2; NumPerks++)                                 
 switch(myEditingType)
 {
     case EditingType.PERKS:
-        draw_sprite_ext(Select_Square, 0,Perk_X + Perk_Offset * CurrentPerk, Perk_Y, 1,1,0,c_white, 1);
-        Message = "";
-        switch(global.Class_Perk[Current_Class_Option * 2 + CurrentPerk])
-        {
-            case "TripleJumpPerk":
-                Message = global.Perk_Name[0];
-                break;
-            case "RateOfFirePerk":
-                Message = global.Perk_Name[1];
-                break;
-            case "ExtraExplosivePerk":
-                Message = global.Perk_Name[2];
-                break;
-            case "DashCooldownPerk":
-                Message = global.Perk_Name[3];
-                break;
-            case "Aim8DirPerk":
-                Message = global.Perk_Name[4];
-                break;
-            case "SmashPerk":
-                Message = global.Perk_Name[5];
-                break;
-        }
-        draw_set_font(Perk_Desc_Font);
-        draw_text(Perk_X , Perk_Y + 100, Message);
+        //draw_sprite_ext(Select_Square, 0,Perk_X + Perk_Offset * CurrentPerk, Perk_Y, 1,1,0,c_white, 1);
         break;
 }
+
+
+draw_set_font(Item_Description);
+var m_col = make_colour_rgb(200,200,200);
+draw_text_colour(room_width * 0.57, room_height / 3 * 2 + 130, "Movement", m_col, m_col, m_col, m_col, 1);
+draw_text_colour(room_width * 0.57, room_height / 3 * 2 + 170, "Power", m_col, m_col, m_col, m_col, 1);
+draw_text_colour(room_width * 0.57, room_height / 3 * 2 + 210, "Rate of Fire", m_col, m_col, m_col, m_col, 1);
+
+//Draw the gun stat
+var Gun_Stat_x = 520;
+var Gun_Stat_y = 460;
+var Gun_Stat_Offset = 30;
+draw_rectangle_colour(Gun_Stat_x - 20,Gun_Stat_y - 20,Gun_Stat_x + 340,Gun_Stat_y + 100,noone, noone,noone,noone,true);
+draw_text_colour(Gun_Stat_x, Gun_Stat_y, "Power", m_col, m_col, m_col, m_col, 1);
+draw_text_colour(Gun_Stat_x, Gun_Stat_y + Gun_Stat_Offset, "Kickback", m_col, m_col, m_col, m_col, 1);
+draw_text_colour(Gun_Stat_x, Gun_Stat_y + Gun_Stat_Offset * 2, "Accuracy", m_col, m_col, m_col, m_col, 1);
+
+//Draw the gun name
+var Flag_Col = make_colour_rgb(245, 205, 66);
+var N_x = 665 - (string_width(global.Gun_Name[Current_Class_Option]) * 0.5);
+var N_y = 400;
+draw_sprite_ext(Flag_End, 0, N_x + 20 + string_width(global.Gun_Name[Current_Class_Option]), N_y - 14, 1,1,0,c_white, 1);
+draw_sprite_ext(Flag_End, 0, N_x + 1, N_y - 14, -1,1,0,c_white, 1);
+
+draw_line_width_colour(N_x, N_y, N_x + 20 + string_width(global.Gun_Name[Current_Class_Option]), N_y, 30, Flag_Col, Flag_Col);
+draw_text_colour(N_x + 10,N_y - 13, global.Gun_Name[Current_Class_Option], c_black, c_black, c_black, c_black, 1);
+
+//Drawing the perk name label
+var N_x = 665 - (string_width(global.Perk_Name[global.Class_Perk_Num[Current_Class_Option * 2 + CurrentPerk]]) * 0.5);
+var N_y = 750;
+draw_sprite_ext(Flag_End, 0, N_x + 20 + string_width(global.Perk_Name[global.Class_Perk_Num[Current_Class_Option * 2 + CurrentPerk]]), N_y - 14, 1,1,0,c_white, 1);
+draw_sprite_ext(Flag_End, 0, N_x + 1, N_y - 14, -1,1,0,c_white, 1);
+
+draw_line_width_colour(N_x, N_y, N_x + 20 + string_width(global.Perk_Name[global.Class_Perk_Num[Current_Class_Option * 2 + CurrentPerk]]), N_y, 30, Flag_Col, Flag_Col);
+draw_text_colour(N_x + 10,N_y - 13, global.Perk_Name[global.Class_Perk_Num[Current_Class_Option * 2 + CurrentPerk]], c_black, c_black, c_black, c_black, 1);
+
+draw_set_font(Perk_Desc_Font);
+draw_text_colour(N_x - 150, N_y + 100, global.Perk_Desc[global.Class_Perk_Num[Current_Class_Option * 2 + CurrentPerk]], m_col, m_col, m_col, m_col, 1);
+
+

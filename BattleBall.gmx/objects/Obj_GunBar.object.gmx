@@ -52,7 +52,7 @@ MaxAmount = 5;
           <argument>
             <kind>1</kind>
             <string>///Draw the bar
-if(global.ShowBars)
+if(global.ShowGunBars)
 {
     draw_healthbar(x, y, x + 150, y - 20, Amount / MaxAmount * 100, c_black, c_red, c_lime, 0, true, true);
 }

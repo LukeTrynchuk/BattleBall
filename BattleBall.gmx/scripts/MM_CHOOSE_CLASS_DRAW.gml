@@ -66,7 +66,7 @@ switch(global.Class_Gun[Current_Class_Option])                                  
 
 //Drawing the perks
 var Perk_X = 575;
-var Perk_Y = 550;
+var Perk_Y = 650;
 var Perk_Offset = 200;
 
 for(var NumPerks = 0; NumPerks < 2; NumPerks++)                                                         //Draw the perks
@@ -90,3 +90,32 @@ for(var NumPerks = 0; NumPerks < 2; NumPerks++)                                 
             break;
     }
 }
+
+//Drawing the stat labels
+draw_set_font(Item_Description);
+var m_col = make_colour_rgb(200,200,200);
+draw_text_colour(room_width * 0.57, room_height / 3 * 2 + 130, "Movement", m_col, m_col, m_col, m_col, 1);
+draw_text_colour(room_width * 0.57, room_height / 3 * 2 + 170, "Power", m_col, m_col, m_col, m_col, 1);
+draw_text_colour(room_width * 0.57, room_height / 3 * 2 + 210, "Rate of Fire", m_col, m_col, m_col, m_col, 1);
+
+//Drawing the gun name label
+var Flag_Col = make_colour_rgb(245, 205, 66);
+var N_x = 665 - (string_width(global.Gun_Name[Current_Class_Option]) * 0.5);
+var N_y = 400;
+draw_sprite_ext(Flag_End, 0, N_x + 20 + string_width(global.Gun_Name[Current_Class_Option]), N_y - 14, 1,1,0,c_white, 1);
+draw_sprite_ext(Flag_End, 0, N_x + 1, N_y - 14, -1,1,0,c_white, 1);
+
+draw_line_width_colour(N_x, N_y, N_x + 20 + string_width(global.Gun_Name[Current_Class_Option]), N_y, 30, Flag_Col, Flag_Col);
+draw_text_colour(N_x + 10,N_y - 13, global.Gun_Name[Current_Class_Option], c_black, c_black, c_black, c_black, 1);
+
+//Draw the gun stat
+var Gun_Stat_x = 520;
+var Gun_Stat_y = 460;
+var Gun_Stat_Offset = 30;
+draw_rectangle_colour(Gun_Stat_x - 20,Gun_Stat_y - 20,Gun_Stat_x + 340,Gun_Stat_y + 100,noone, noone,noone,noone,true);
+draw_text_colour(Gun_Stat_x, Gun_Stat_y, "Power", m_col, m_col, m_col, m_col, 1);
+draw_text_colour(Gun_Stat_x, Gun_Stat_y + Gun_Stat_Offset, "Kickback", m_col, m_col, m_col, m_col, 1);
+draw_text_colour(Gun_Stat_x, Gun_Stat_y + Gun_Stat_Offset * 2, "Accuracy", m_col, m_col, m_col, m_col, 1);
+
+
+

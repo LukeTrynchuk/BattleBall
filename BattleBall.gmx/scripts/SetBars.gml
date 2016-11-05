@@ -1,5 +1,5 @@
 ///SetBars()
-switch(CurrentClass)
+switch(Current_Class_Option)
 {
     case 0:                     //Light
         with(MovementInst) Amount = 5;

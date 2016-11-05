@@ -1,6 +1,10 @@
 ///MM_CHOOSE_CLASS()
+global.ShowBars = true;
+global.ShowGunBars = true;
 GetClassInput();                                                                                //Get the input
 
+SetGunBars();
+SetBars();
 if((up || down) && CanSwitchClass)                                                              //If the player is changing the selection
 {
     var chooseDirection = -1;                                                                   //Set the direction
@@ -8,6 +12,7 @@ if((up || down) && CanSwitchClass)                                              
     
     Current_Class_Option += chooseDirection;                                                    //Increment by the direction
     Current_Class_Option = clamp(Current_Class_Option, 0, array_length_1d(myClasses) - 1);      //clamp the value
+    
     
     Reset_Menu_Timer();                                                                         //Reset the timer
 }

@@ -204,9 +204,16 @@ SwitchTimer = room_speed * 0.15;                                                
 
 //DisplayInst = instance_create(room_width * 0.83 , y, Obj_ClassPlayer);              //The big player sprite object on the side
 
-//MovementInst = instance_create(room_width * 0.78, y + 125,Obj_Bar);                 //The movement bar object
-//PowerInst = instance_create(room_width * 0.78, y + 150, Obj_Bar);                   //The power bar object
-//RateOfFireInst = instance_create(room_width * 0.78, y+175, Obj_Bar);                //The rate of fire object
+MovementInst = instance_create(room_width * 0.65, room_height / 3 * 2 + 150,Obj_Bar);                 //The movement bar object
+PowerInst = instance_create(room_width * 0.65, room_height / 3 * 2 + 190, Obj_Bar);                   //The power bar object
+RateOfFireInst = instance_create(room_width * 0.65, room_height / 3 * 2 + 230, Obj_Bar);                //The rate of fire object
+
+global.ShowGunBars = false;
+var b_x = 680;
+var b_y = 480;
+Gun_PowerInst = instance_create(b_x,b_y,Obj_GunBar);       //The power stat for the gun
+Gun_Kickback = instance_create(b_x,b_y + 30,Obj_GunBar);        //The kickback stat for the gun
+Gun_Accuracy = instance_create(b_x, b_y + 60, Obj_GunBar);      //The accuracy stat for the gun
 </string>
           </argument>
         </arguments>
@@ -263,6 +270,7 @@ myClasses[3] = "Sniper";
 
 Current_Class_Option = 0;
 
+global.ShowBars = false;
 </string>
           </argument>
         </arguments>

@@ -1,4 +1,6 @@
 ///MM_EDIT_CLASS()
+global.ShowBars = true;
+global.ShowGunBars = true;
 GetClassInput();                                                                                //Get the input
 
 if((left || right) && CanSwitchClass)                                                              //If the player is changing the selection
@@ -9,6 +11,9 @@ if((left || right) && CanSwitchClass)                                           
     CurrentPerk += chooseDirection;                                                    //Increment by the direction
     
     CurrentPerk = clamp(CurrentPerk, 0, 1);
+    
+    SetBars();                                                                                   //Set the stat bars
+    SetGunBars();                                                                                //Set the gun stat bars
     
     Reset_Menu_Timer();                                                                         //Reset the timer
 }
