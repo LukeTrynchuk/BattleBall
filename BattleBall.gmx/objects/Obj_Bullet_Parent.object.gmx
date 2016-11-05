@@ -156,6 +156,34 @@ col = make_color_rgb(Color_Value, Color_Value,Color_Value);
         </arguments>
       </action>
     </event>
+    <event eventtype="4" ename="Obj_player">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with (Obj_Bullet_Parent)
+   {
+    instance_destroy();
+   }
+   
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="4" ename="Obj_Slope">
       <action>
         <libid>1</libid>

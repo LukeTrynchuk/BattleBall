@@ -640,23 +640,23 @@ if(right_trigger &amp;&amp; canShoot)                                           
     var myGun = global.Class_Gun[global.Current_Class];                                                              
     if(myGun == "Pistol")                                                                                  //If the current gun type is pistol
     {
-        inst = instance_create(phy_position_x + 17 * image_xscale, phy_position_y, Obj_Bullet);                         //Create the bullet
+        inst = instance_create(phy_position_x + 45 * image_xscale, phy_position_y, Obj_Bullet);                         //Create the bullet
         ShootTimer = Rate_Of_Fire_Pistol;                                                                               //Set the bullet timer (rate of fire)
         audio_play_sound_on(audio_s, hand_gun, false, 1);
         ShotKickBack = PistolGunKickBack;                                                                               //Set the kickback
     }
     else if (myGun == "MachineGun")                                                                        //If the current gun type is machine gun
     {
-        inst = instance_create(phy_position_x + 17 * image_xscale, phy_position_y, Obj_MachineGun_Bullet);              //Create the bullet
+        inst = instance_create(phy_position_x + 45 * image_xscale, phy_position_y, Obj_MachineGun_Bullet);              //Create the bullet
         ShootTimer = Rate_Of_Fire_MachineGun;                                                                           //Set the shootTimer ( rate of fire)
         audio_play_sound_on(audio_s, machine_gun, false, 1);
         ShotKickBack = MachineGunKickBack;                                                                              //Set the kickback
     }
     else if (myGun == "Minigun")                                                                           //If the current gun type is Minigun
     {
-        inst = instance_create(phy_position_x + 17 * image_xscale, phy_position_y, Obj_Minigun_Bullet);                 //Create three minigun bullets
-        var inst2 = instance_create(phy_position_x + 17 * image_xscale, phy_position_y, Obj_Minigun_Bullet);
-        var inst3 = instance_create(phy_position_x + 17 * image_xscale, phy_position_y, Obj_Minigun_Bullet);
+        inst = instance_create(phy_position_x + 45 * image_xscale, phy_position_y, Obj_Minigun_Bullet);                 //Create three minigun bullets
+        var inst2 = instance_create(phy_position_x + 45 * image_xscale, phy_position_y, Obj_Minigun_Bullet);
+        var inst3 = instance_create(phy_position_x + 45 * image_xscale, phy_position_y, Obj_Minigun_Bullet);
         
         with(inst2) dir = other.image_xscale;                                                                           //Set the image_xscale of the two other bullets
         with(inst3) dir = other.image_xscale;
@@ -673,20 +673,20 @@ if(right_trigger &amp;&amp; canShoot)                                           
     }
      else if (myGun == "Sniper")
     {
-        inst = instance_create(phy_position_x + 17 * image_xscale, phy_position_y, Obj_Sniper_Bullet);                  //Create the sniper bullet
+        inst = instance_create(phy_position_x + 45 * image_xscale, phy_position_y, Obj_Sniper_Bullet);                  //Create the sniper bullet
         ShootTimer = Rate_Of_Fire_Sniper;                                                                               //Set the shoot timer (rate of fire)
         audio_play_sound_on(audio_s, sniper_shot, false, 1); 
         ShotKickBack = SniperKickBack;                                                                                  //Set the kickback
     }
     else if(BulletType == "Rocket")                                                                                  //If the current gun type is pistol
     {
-        inst = instance_create(phy_position_x + 17 * image_xscale, phy_position_y, Obj_Rocket_Bullet);                  //Create the bullet
+        inst = instance_create(phy_position_x + 45 * image_xscale, phy_position_y, Obj_Rocket_Bullet);                  //Create the bullet
         ShootTimer = Rate_Of_Fire_Rocket;                                                                               //Set the bullet timer (rate of fire)
         PlayGunShotSound(WEAPON_GUNSHOT_ShotGun_01);                                                                    //Play the gun shot pertaining to the pistol
         ShotKickBack = RocketKickBack;                                                                                  //Set the kickback
     }
     
-    instance_create(phy_position_x + 17 * image_xscale, phy_position_y, Obj_MuzzleFlashEffect);                         //Create a muzzle flash effect
+    instance_create(phy_position_x + 45 * image_xscale, phy_position_y, Obj_MuzzleFlashEffect);                         //Create a muzzle flash effect
     Create_Bullet_Shell();                                                                                              //Create a bullet shell
     
     with(inst)                                                                                                          //Set the image_xscale of the bullet instance
@@ -1255,8 +1255,8 @@ else if (playerNum == 2)
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
     <point>0,0</point>
-    <point>32,0</point>
-    <point>32,36</point>
+    <point>28,0</point>
+    <point>28,36</point>
     <point>0,36</point>
   </PhysicsShapePoints>
 </object>
