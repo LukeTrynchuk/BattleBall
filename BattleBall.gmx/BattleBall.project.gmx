@@ -262,6 +262,7 @@
       <sprite>sprites\Loogaroo_Logo</sprite>
       <sprite>sprites\DogHouse_Logo</sprite>
     </sprites>
+    <sprite>sprites\Speed_Pickup</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -415,6 +416,7 @@
     </objects>
     <objects name="Level">
       <object>objects\Obj_Ball</object>
+      <object>objects\Obj_Speed_Pickup</object>
       <object>objects\Obj_Solid</object>
       <object>objects\Obj_Gun_Crate</object>
       <object>objects\Obj_Slope</object>

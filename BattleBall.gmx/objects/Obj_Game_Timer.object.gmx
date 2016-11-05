@@ -27,8 +27,34 @@
             <kind>1</kind>
             <string>global.ShakeAmount = 2;
 global.SecondsLeft = 100;
-alarm[0] = 30;
+alarm[0] = room_speed;
+alarm[1] = room_speed;
 MachineGunTime = 100;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>alarm[1] = room_speed * 30;
+
+instance_create(random_range(10,1270), random_range(10,710), Obj_Speed_Pickup);
 </string>
           </argument>
         </arguments>

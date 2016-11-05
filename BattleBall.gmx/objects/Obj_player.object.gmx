@@ -4,7 +4,7 @@
   <solid>0</solid>
   <visible>-1</visible>
   <depth>0</depth>
-  <persistent>0</persistent>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -60,6 +60,7 @@
             <kind>1</kind>
             <string>///Set general movement variables
 spd = 1;                           //Speed player moves at
+speed_up = false;
 
 //Jumping Variables
 IsJumping = false;                 //Player is not jumping when created
@@ -212,7 +213,7 @@ MinigunSoundCounter = 8;                    //This variable makes sure that we d
             <kind>1</kind>
             <string>///Grenade variables
 CanThrowGrenade = true;
-GrenadeAlarmTime = room_speed * 5;
+GrenadeAlarmTime = room_speed * 1;
 GrenadesLeft = 2;
 </string>
           </argument>
@@ -299,6 +300,29 @@ PlayedPrechargeSound = false;
             <string>///Player is dead
 audio_emitter_free(audio_em);
 audio_emitter_free(audio_s);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>speed_up = true;
 </string>
           </argument>
         </arguments>
@@ -928,7 +952,7 @@ if(left_bumper &amp;&amp; CanThrowGrenade &amp;&amp; GrenadesLeft &gt; 0)
     var inst = instance_create(x,y,Obj_Grenade);
     with(inst)
     {
-        physics_apply_impulse(phy_position_x, phy_position_y, other.image_xscale * 50, 20);
+        physics_apply_impulse(phy_position_x, phy_position_y, other.image_xscale * 10, -30);
     }
     CanThrowGrenade = false;
     alarm[7] = GrenadeAlarmTime;
@@ -1006,6 +1030,35 @@ if(!hasPerks)
             <kind>1</kind>
             <string>///Sound stuff
 LandSoundCounter++;
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="Obj_Speed_Pickup">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Collect Speed Up Crate
+with(other)
+{
+    instance_destroy();
+}
 
 
 </string>
