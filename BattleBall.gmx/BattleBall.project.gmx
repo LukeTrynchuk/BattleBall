@@ -67,17 +67,26 @@
       <sprite>sprites\Title_JustName</sprite>
     </sprites>
     <sprites name="Player">
-      <sprite>sprites\player_walk</sprite>
-      <sprite>sprites\player_idle</sprite>
-      <sprite>sprites\player_jump</sprite>
-      <sprite>sprites\player_ledge_grab</sprite>
-      <sprite>sprites\Player1_ID</sprite>
-      <sprite>sprites\Player2_ID</sprite>
+      <sprites name="Player1">
+        <sprite>sprites\player_walk</sprite>
+        <sprite>sprites\player_jump</sprite>
+        <sprite>sprites\Player1_ID</sprite>
+        <sprite>sprites\player_idle</sprite>
+        <sprite>sprites\player_ledge_grab</sprite>
+      </sprites>
+      <sprites name="Player2">
+        <sprite>sprites\player_walk_p2</sprite>
+        <sprite>sprites\player_ledge_grab_p2</sprite>
+        <sprite>sprites\player_idle_p2</sprite>
+        <sprite>sprites\player_jump_p2</sprite>
+        <sprite>sprites\Player2_ID</sprite>
+      </sprites>
     </sprites>
     <sprites name="Level">
       <sprite>sprites\solid_block</sprite>
       <sprite>sprites\ball</sprite>
       <sprite>sprites\Net</sprite>
+      <sprite>sprites\Net2</sprite>
       <sprite>sprites\Gun_Crate</sprite>
       <sprite>sprites\Slope</sprite>
       <sprites name="Temp">
@@ -366,6 +375,7 @@
       <object>objects\Obj_Gun_Crate</object>
       <object>objects\Obj_Slope</object>
       <object>objects\Obj_Net</object>
+      <object>objects\Obj_Net2</object>
       <object>objects\Obj_Dynamic_Parent</object>
       <object>objects\Obj_Moving_Platform</object>
       <object>objects\Obj_Static_Parent</object>

@@ -97,7 +97,6 @@
     <instance objName="Obj_Solid" x="864" y="0" name="inst_041F771E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_Solid" x="896" y="0" name="inst_3CC2B2B7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_Solid" x="928" y="0" name="inst_CB0D138B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Obj_Net" x="1200" y="640" name="inst_21B8F954" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_Net" x="64" y="640" name="inst_52FEA746" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_Background_Music" x="160" y="64" name="inst_BC59903A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_Game_Timer" x="505" y="88" name="inst_5F6F6D3C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -222,6 +221,7 @@
     <instance objName="Obj_Fence" x="196" y="672" name="inst_3B0268F8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_Fence" x="220" y="676" name="inst_D611A3FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_Fence" x="272" y="676" name="inst_75A7EBCB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Obj_Net2" x="1214" y="640" name="inst_735ED427" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>
