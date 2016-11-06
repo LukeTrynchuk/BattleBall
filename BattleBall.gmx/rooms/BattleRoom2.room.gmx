@@ -113,9 +113,6 @@
     <instance objName="Obj_Solid" x="1248" y="448" name="inst_399178F4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_Solid" x="1248" y="480" name="inst_8201A516" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_Solid" x="1248" y="512" name="inst_3777218A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Obj_Background_Music" x="160" y="64" name="inst_BC59903A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Obj_Game_Timer" x="505" y="88" name="inst_5F6F6D3C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="Obj_Game" x="432" y="112" name="inst_D92DFF21" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_Solid" x="592" y="176" name="inst_3B65CF1E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_Solid" x="592" y="208" name="inst_229E1138" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_Solid" x="592" y="240" name="inst_6043B4AE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -245,6 +242,7 @@
     <instance objName="Obj_Solid" x="0" y="672" name="inst_D85305B7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_Solid" x="0" y="704" name="inst_4C461AF8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="Obj_Net2" x="1200" y="640" name="inst_D8C281CD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Obj_Countdown" x="464" y="160" name="inst_A45CB18F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>
