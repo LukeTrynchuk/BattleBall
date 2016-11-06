@@ -63,9 +63,22 @@ if (phy_position_x &lt; room_width/2)
 global.player2_score++;
 }
 
-
-phy_position_x = startXPosition;
-phy_position_y = startYPosition;
+var SpawnPoint = choose(1,2,3);
+switch(SpawnPoint)
+{
+    case 1:
+        phy_position_x = startXPosition;
+        phy_position_y = startYPosition;
+        break;
+    case 2:
+        phy_position_x = 276;
+        phy_position_y = 76;
+        break;
+    case 3:
+        phy_position_x = 940;
+        phy_position_y = 80;
+        break;
+}
 
 if phy_linear_velocity_x != 0
    {
