@@ -128,6 +128,7 @@
         <sprite>sprites\spr_rubbish2</sprite>
         <sprite>sprites\spr_fence</sprite>
       </sprites>
+      <sprite>sprites\Speed_Pickup</sprite>
     </sprites>
     <sprites name="Bullet">
       <sprite>sprites\Bullet</sprite>
@@ -180,6 +181,7 @@
         </sprites>
       </sprites>
       <sprites name="Confetti effect">
+        <sprite>sprites\SCORE</sprite>
         <sprite>sprites\sprite_ring</sprite>
         <sprite>sprites\sprite_confetti</sprite>
       </sprites>
@@ -274,14 +276,17 @@
       <sprite>sprites\Loogaroo_Logo</sprite>
       <sprite>sprites\DogHouse_Logo</sprite>
     </sprites>
-    <sprite>sprites\Speed_Pickup</sprite>
     <sprites name="Score_board">
       <sprite>sprites\Countdown_3</sprite>
       <sprite>sprites\Score_Board</sprite>
       <sprite>sprites\Countdown_1</sprite>
       <sprite>sprites\Countdown_2</sprite>
     </sprites>
-    <sprite>sprites\SCORE</sprite>
+    <sprites name="End Game">
+      <sprite>sprites\END_GAME_WIN</sprite>
+      <sprite>sprites\END_GAME_LOSE</sprite>
+      <sprite>sprites\END_GAME_PEDASTAL</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -388,6 +393,7 @@
     <font>fonts\Game_Descriptions</font>
     <font>fonts\Item_Description</font>
     <font>fonts\ScoreBoardFont</font>
+    <font>fonts\EndGameFont</font>
   </fonts>
   <objects name="objects">
     <objects name="effects">

@@ -87,8 +87,11 @@ switch(alarmCounter)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = myPlayer.x;
-y = myPlayer.y - 30;
+            <string>if(instance_exists(global.player1) &amp;&amp; instance_exists(global.player2))
+{
+    x = myPlayer.x;
+    y = myPlayer.y - 30;
+}
 
 if(alarmCounter == 1) myAlpha -= 1 / LifeTime;
 </string>

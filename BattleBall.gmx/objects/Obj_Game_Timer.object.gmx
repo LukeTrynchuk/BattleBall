@@ -33,6 +33,14 @@ global.SecondsLeft = 30;
 alarm[0] = room_speed;
 alarm[1] = room_speed;
 MachineGunTime = 100;
+
+enum TIME_STATE
+{
+    TS_PLAYING,
+    TS_END
+};
+
+myTimeState = TIME_STATE.TS_PLAYING;
 </string>
           </argument>
         </arguments>
@@ -56,6 +64,14 @@ MachineGunTime = 100;
           <argument>
             <kind>1</kind>
             <string>audio_emitter_free(audio_em);
+gamepad_set_vibration(0, 0, 0);
+
+        with(global.bg_music)
+        {
+            instance_destroy();
+        }
+        
+        room_goto(rm_class_choose_screen);
 </string>
           </argument>
         </arguments>
@@ -78,9 +94,11 @@ MachineGunTime = 100;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[1] = room_speed * 30;
-
-instance_create(random_range(10,1270), random_range(10,710), Obj_Speed_Pickup);
+            <string>if(myTimeState == TIME_STATE.TS_PLAYING)
+{
+    alarm[1] = room_speed * 30;
+    instance_create(random_range(10,1270), random_range(10,710), Obj_Speed_Pickup);
+}
 </string>
           </argument>
         </arguments>
@@ -103,33 +121,52 @@ instance_create(random_range(10,1270), random_range(10,710), Obj_Speed_Pickup);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.SecondsLeft = global.SecondsLeft - 1;
-alarm[0] = room_speed;
-
-if(global.SecondsLeft == 0)
+            <string>
+if(myTimeState == TIME_STATE.TS_PLAYING)
 {
-    gamepad_set_vibration(0, 0, 0);
-    with(global.Ball)
+    global.SecondsLeft = global.SecondsLeft - 1;
+    alarm[0] = room_speed;
+    
+    if(global.SecondsLeft == 0)
+    {
+        with(global.player1) instance_destroy();
+        with(global.player2) instance_destroy();
+        with(global.Ball) instance_destroy();
+        myTimeState = TIME_STATE.TS_END;
+    }
+}
+else if (myTimeState == TIME_STATE.TS_END)
+{
+
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (myTimeState == TIME_STATE.TS_END)
+{
+    if(gamepad_button_check_released(0, gp_face3))
     {
         instance_destroy();
     }
-    
-    with(global.player1)
-    {
-        instance_destroy();
-    }
-    
-    with (global.player2)
-    {
-        instance_destroy();
-    }
-    
-    with(global.bg_music)
-    {
-        instance_destroy();
-    }
-    
-    room_goto(rm_class_choose_screen);
 }
 </string>
           </argument>
@@ -154,50 +191,79 @@ if(global.SecondsLeft == 0)
           <argument>
             <kind>1</kind>
             <string>///Draw the time
-draw_sprite_ext(Score_Board, 0, room_width / 2, 24, 0.5,0.5,0,c_white, 1);
 
-//Timer_Font_Script();
-if(global.SecondsLeft &gt; 3)
+if(myTimeState == TIME_STATE.TS_PLAYING)
 {
-    draw_set_font(ScoreBoardFont);
-    var Time_col = make_colour_rgb(200,200,200);
-    draw_text_colour(room_width / 2 - (string_width(string(global.SecondsLeft)) * 0.5), 10, string(global.SecondsLeft), Time_col, Time_col, Time_col, Time_col, 1);
-}
-else
-{
-    var angle = random_range (-4, 4);
-    switch(global.SecondsLeft)
+    draw_sprite_ext(Score_Board, 0, room_width / 2, 24, 0.5,0.5,0,c_white, 1);
+    
+    //Timer_Font_Script();
+    if(global.SecondsLeft &gt; 3)
     {
-        case 1:
-            if(countdown_counter == 2)
-            {
-                Playhit(Timer_Countdown, audio_em);
-                countdown_counter++;
-            }
-            draw_sprite_ext(Glitch_1_2, 0, room_width / 2 - random_range(1, 5), 25, 0.3, 0.3, angle,c_white, 1);
-            draw_sprite_ext(Glitch_1_3, 0, room_width / 2 + random_range(1,5), 25, 0.3, 0.3, angle, c_white, 1);
-            draw_sprite_ext(Glitch_1_1, 0, room_width / 2, 25, 0.3, 0.3, angle, c_white, 1);
-            break;
-        case 2:
-            if(countdown_counter == 1)
-            {
-                Playhit(Timer_Countdown, audio_em);
-                countdown_counter++;
-            }
-            draw_sprite_ext(Glitch_2_2, 0, room_width / 2 - random_range(1, 5), 25, 0.3, 0.3, angle,c_white, 1);
-            draw_sprite_ext(Glitch_2_3, 0, room_width / 2 + random_range(1, 5), 25, 0.3, 0.3, angle, c_white, 1);
-            draw_sprite_ext(Glitch_2_1, 0, room_width / 2, 25, 0.3, 0.3, angle, c_white, 1);
-            break;
-        case 3:
-            if(countdown_counter == 0)
-            {
-                Playhit(Timer_Countdown, audio_em);
-                countdown_counter++;
-            }
-            draw_sprite_ext(Glitch_3_2, 0, room_width / 2 - random_range(1, 5), 25, 0.3, 0.3, angle,c_white, 1);
-            draw_sprite_ext(Glitch_3_3, 0, room_width / 2 + random_range(1, 5), 25, 0.3, 0.3, angle, c_white, 1);
-            draw_sprite_ext(Glitch_3_1, 0, room_width / 2, 25, 0.3, 0.3, angle, c_white, 1);
-            break;
+        draw_set_font(ScoreBoardFont);
+        var Time_col = make_colour_rgb(200,200,200);
+        draw_text_colour(room_width / 2 - (string_width(string(global.SecondsLeft)) * 0.5), 10, string(global.SecondsLeft), Time_col, Time_col, Time_col, Time_col, 1);
+    }
+    else
+    {
+        var angle = random_range (-4, 4);
+        switch(global.SecondsLeft)
+        {
+            case 1:
+                if(countdown_counter == 2)
+                {
+                    Playhit(Timer_Countdown, audio_em);
+                    countdown_counter++;
+                }
+                draw_sprite_ext(Glitch_1_2, 0, room_width / 2 - random_range(1, 5), 25, 0.3, 0.3, angle,c_white, 1);
+                draw_sprite_ext(Glitch_1_3, 0, room_width / 2 + random_range(1,5), 25, 0.3, 0.3, angle, c_white, 1);
+                draw_sprite_ext(Glitch_1_1, 0, room_width / 2, 25, 0.3, 0.3, angle, c_white, 1);
+                break;
+            case 2:
+                if(countdown_counter == 1)
+                {
+                    Playhit(Timer_Countdown, audio_em);
+                    countdown_counter++;
+                }
+                draw_sprite_ext(Glitch_2_2, 0, room_width / 2 - random_range(1, 5), 25, 0.3, 0.3, angle,c_white, 1);
+                draw_sprite_ext(Glitch_2_3, 0, room_width / 2 + random_range(1, 5), 25, 0.3, 0.3, angle, c_white, 1);
+                draw_sprite_ext(Glitch_2_1, 0, room_width / 2, 25, 0.3, 0.3, angle, c_white, 1);
+                break;
+            case 3:
+                if(countdown_counter == 0)
+                {
+                    Playhit(Timer_Countdown, audio_em);
+                    countdown_counter++;
+                }
+                draw_sprite_ext(Glitch_3_2, 0, room_width / 2 - random_range(1, 5), 25, 0.3, 0.3, angle,c_white, 1);
+                draw_sprite_ext(Glitch_3_3, 0, room_width / 2 + random_range(1, 5), 25, 0.3, 0.3, angle, c_white, 1);
+                draw_sprite_ext(Glitch_3_1, 0, room_width / 2, 25, 0.3, 0.3, angle, c_white, 1);
+                break;
+        }
+    }
+}
+else if (myTimeState == TIME_STATE.TS_END)
+{
+    draw_sprite_ext(Top_Banner, 0, 0, room_height / 2 - 150, room_width, 400, 0, c_white, 1);
+    draw_sprite_ext(END_GAME_PEDASTAL, 0, room_width / 2 + 55, room_height / 2 + 120, 0.8,0.8,0,c_white, 1);
+    
+    draw_set_font(EndGameFont);
+    var blue = make_colour_rgb(66, 168, 255);
+    draw_text_colour(room_width / 5 - string_width(string(global.player1_score)), room_height / 2, string(global.player1_score), blue, blue, blue, blue, 1);
+    draw_text_colour(room_width / 5 * 4, room_height / 2, string(global.player2_score), c_orange, c_orange, c_orange, c_orange, 1);
+    
+    if(global.player1_score &gt; global.player2_score)
+    {
+        draw_sprite_ext(END_GAME_WIN, 0, room_width / 2, room_height / 2 - 100, 1,1,0, c_white, 1);
+        
+        draw_sprite_ext(player_idle, 0, room_width / 2 + 4, room_height / 2 + 25, 1,1,0, c_white, 1);
+        draw_sprite_ext(player_idle_p2, 0, room_width / 2 + 107, room_height / 2 + 71, 1,1,0,c_white, 1);
+    }
+    else
+    {
+        draw_sprite_ext(END_GAME_LOSE, 0, room_width / 2, room_height / 2 - 100, 1,1,0, c_white, 1);
+        
+        draw_sprite_ext(player_idle_p2, 0, room_width / 2 + 4, room_height / 2 + 25, 1,1,0, c_white, 1);
+        draw_sprite_ext(player_idle, 0, room_width / 2 + 107, room_height / 2 + 71, 1,1,0,c_white, 1);
     }
 }
 </string>

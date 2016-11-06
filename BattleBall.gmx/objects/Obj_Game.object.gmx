@@ -51,6 +51,7 @@ with(global.player2)
 }
 
 
+
 </string>
           </argument>
         </arguments>
@@ -73,10 +74,10 @@ with(global.player2)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>    with(GameScore)
-    {
-        instance_destroy();
-    }
+            <string>with(GameScore)
+{
+    instance_destroy();
+}
 </string>
           </argument>
         </arguments>
@@ -124,6 +125,11 @@ if(start)
         }
 
     }
+}
+
+if(global.SecondsLeft &lt;= 0)
+{
+    instance_destroy();
 }
 </string>
           </argument>
