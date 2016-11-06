@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>global.ShakeAmount = 2;
-global.SecondsLeft = 100;
+global.SecondsLeft = 30;
 alarm[0] = room_speed;
 alarm[1] = room_speed;
 MachineGunTime = 100;
@@ -83,7 +83,27 @@ alarm[0] = room_speed;
 if(global.SecondsLeft == 0)
 {
     gamepad_set_vibration(0, 0, 0);
-    room_goto(rm_menu);
+    with(global.Ball)
+    {
+        instance_destroy();
+    }
+    
+    with(global.player1)
+    {
+        instance_destroy();
+    }
+    
+    with (global.player2)
+    {
+        instance_destroy();
+    }
+    
+    with(global.bg_music)
+    {
+        instance_destroy();
+    }
+    
+    room_goto(rm_class_choose_screen);
 }
 </string>
           </argument>

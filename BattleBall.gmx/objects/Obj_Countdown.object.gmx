@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Initialize the countdown
-instance_create(x,y,Obj_Background_Music);
+global.bg_music = instance_create(x,y,Obj_Background_Music);
 
 mySprite = noone;
 mySpriteLeft = noone;
