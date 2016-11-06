@@ -29,6 +29,7 @@
     </sounds>
     <sounds name="Music">
       <sound>sound\snd_Music_Test</sound>
+      <sound>sound\BATTLE_MUSIC_2</sound>
       <sound>sound\BATTLE_MUSIC_1</sound>
     </sounds>
     <sounds name="Effects">
@@ -60,6 +61,9 @@
       <sounds name="Bullet_Impact">
         <sound>sound\metal_ping1</sound>
         <sound>sound\Bullet_Dirt_hit</sound>
+      </sounds>
+      <sounds name="confetti">
+        <sound>sound\snd_confetti</sound>
       </sounds>
     </sounds>
     <sounds name="Main Menu">
@@ -173,6 +177,10 @@
           <sprite>sprites\Glitch_Battle_1</sprite>
         </sprites>
       </sprites>
+      <sprites name="Confetti effect">
+        <sprite>sprites\sprite_ring</sprite>
+        <sprite>sprites\sprite_confetti</sprite>
+      </sprites>
     </sprites>
     <sprites name="Menu Items">
       <sprites name="LevelBoxes">
@@ -271,6 +279,7 @@
       <sprite>sprites\Countdown_1</sprite>
       <sprite>sprites\Countdown_2</sprite>
     </sprites>
+    <sprite>sprites\SCORE</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -398,6 +407,11 @@
         <object>objects\Obj_Error_Controller</object>
       </objects>
       <object>objects\Obj_Countdown</object>
+      <object>objects\Obj_Score_Effect</object>
+      <objects name="Confetti">
+        <object>objects\ObjectRipple</object>
+        <object>objects\Obj_Confetti</object>
+      </objects>
     </objects>
     <objects name="Bullets">
       <object>objects\Obj_Bullet_Parent</object>
