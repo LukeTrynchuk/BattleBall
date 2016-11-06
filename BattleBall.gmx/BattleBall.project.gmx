@@ -55,6 +55,7 @@
       <sounds name="Countdown">
         <sound>sound\GAME_COUNTDOWN_BATTLE</sound>
         <sound>sound\GAME_COUNTDOWN</sound>
+        <sound>sound\Timer_Countdown</sound>
       </sounds>
       <sounds name="Bullet_Impact">
         <sound>sound\metal_ping1</sound>
@@ -264,7 +265,12 @@
       <sprite>sprites\DogHouse_Logo</sprite>
     </sprites>
     <sprite>sprites\Speed_Pickup</sprite>
-    <sprite>sprites\Score_Board</sprite>
+    <sprites name="Score_board">
+      <sprite>sprites\Countdown_3</sprite>
+      <sprite>sprites\Score_Board</sprite>
+      <sprite>sprites\Countdown_1</sprite>
+      <sprite>sprites\Countdown_2</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>

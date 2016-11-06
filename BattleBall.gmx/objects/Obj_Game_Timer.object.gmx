@@ -25,11 +25,37 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.ShakeAmount = 2;
+            <string>audio_em = audio_emitter_create();
+countdown_counter = 0;
+
+global.ShakeAmount = 2;
 global.SecondsLeft = 30;
 alarm[0] = room_speed;
 alarm[1] = room_speed;
 MachineGunTime = 100;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>audio_emitter_free(audio_em);
 </string>
           </argument>
         </arguments>
@@ -131,9 +157,49 @@ if(global.SecondsLeft == 0)
 draw_sprite_ext(Score_Board, 0, room_width / 2, 24, 0.5,0.5,0,c_white, 1);
 
 //Timer_Font_Script();
-draw_set_font(ScoreBoardFont);
-var Time_col = make_colour_rgb(200,200,200);
-draw_text_colour(room_width / 2 - (string_width(string(global.SecondsLeft)) * 0.5), 10, string(global.SecondsLeft), Time_col, Time_col, Time_col, Time_col, 1);
+if(global.SecondsLeft &gt; 3)
+{
+    draw_set_font(ScoreBoardFont);
+    var Time_col = make_colour_rgb(200,200,200);
+    draw_text_colour(room_width / 2 - (string_width(string(global.SecondsLeft)) * 0.5), 10, string(global.SecondsLeft), Time_col, Time_col, Time_col, Time_col, 1);
+}
+else
+{
+    var angle = random_range (-4, 4);
+    switch(global.SecondsLeft)
+    {
+        case 1:
+            if(countdown_counter == 2)
+            {
+                Playhit(Timer_Countdown, audio_em);
+                countdown_counter++;
+            }
+            draw_sprite_ext(Glitch_1_2, 0, room_width / 2 - random_range(1, 5), 25, 0.3, 0.3, angle,c_white, 1);
+            draw_sprite_ext(Glitch_1_3, 0, room_width / 2 + random_range(1,5), 25, 0.3, 0.3, angle, c_white, 1);
+            draw_sprite_ext(Glitch_1_1, 0, room_width / 2, 25, 0.3, 0.3, angle, c_white, 1);
+            break;
+        case 2:
+            if(countdown_counter == 1)
+            {
+                Playhit(Timer_Countdown, audio_em);
+                countdown_counter++;
+            }
+            draw_sprite_ext(Glitch_2_2, 0, room_width / 2 - random_range(1, 5), 25, 0.3, 0.3, angle,c_white, 1);
+            draw_sprite_ext(Glitch_2_3, 0, room_width / 2 + random_range(1, 5), 25, 0.3, 0.3, angle, c_white, 1);
+            draw_sprite_ext(Glitch_2_1, 0, room_width / 2, 25, 0.3, 0.3, angle, c_white, 1);
+            break;
+        case 3:
+            if(countdown_counter == 0)
+            {
+                Playhit(Timer_Countdown, audio_em);
+                countdown_counter++;
+            }
+            draw_sprite_ext(Glitch_3_2, 0, room_width / 2 - random_range(1, 5), 25, 0.3, 0.3, angle,c_white, 1);
+            draw_sprite_ext(Glitch_3_3, 0, room_width / 2 + random_range(1, 5), 25, 0.3, 0.3, angle, c_white, 1);
+            draw_sprite_ext(Glitch_3_1, 0, room_width / 2, 25, 0.3, 0.3, angle, c_white, 1);
+            break;
+    }
+}
 </string>
           </argument>
         </arguments>
