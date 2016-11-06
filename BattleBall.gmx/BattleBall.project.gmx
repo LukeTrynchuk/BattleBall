@@ -251,6 +251,7 @@
       <sprite>sprites\A_Button_360</sprite>
       <sprite>sprites\B_Button_360</sprite>
       <sprite>sprites\dash_cooldown</sprite>
+      <sprite>sprites\START_Button_360</sprite>
     </sprites>
     <sprites name="Guns">
       <sprite>sprites\Pistol</sprite>
@@ -325,6 +326,7 @@
               <script>scripts\MM_CHOOSE_CLASS.gml</script>
               <script>scripts\MM_CHOOSE_CLASS_CONFIRM.gml</script>
               <script>scripts\MM_CHOOSE_CLASS_BACK.gml</script>
+              <script>scripts\MM_CHOOSE_CLASS_START.gml</script>
             </scripts>
             <scripts name="MM_EDIT_CLASS">
               <script>scripts\MM_EDIT_CLASS.gml</script>

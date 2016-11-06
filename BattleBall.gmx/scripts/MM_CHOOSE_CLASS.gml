@@ -33,3 +33,8 @@ else if (back)                                                                  
     MM_CHOOSE_CLASS_BACK();                                                                     //Execute the back code
     Reset_Menu_Timer();
 }
+else if (start)
+{
+    MM_CHOOSE_CLASS_START();                                                                    //If they hit start
+    Reset_Menu_Timer();                                                                         //Reset the menu timer
+}

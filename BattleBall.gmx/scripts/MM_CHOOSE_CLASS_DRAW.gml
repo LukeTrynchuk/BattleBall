@@ -4,6 +4,10 @@ draw_sprite_ext(back_panel, 0, 0,0, room_width / 3 * 2 - 200, room_height, 0, c_
 draw_set_font(Main_Menu_Font);                                                      //Set the font
 DRAW_BARS();
 
+var version_col = make_color_rgb(80, 80, 80);
+draw_text_colour(240, room_height - 42, "Game", version_col, version_col, version_col, version_col, 1);
+draw_sprite_ext(START_Button_360, 0, 200, room_height - 33, 0.7,0.7,0,c_white, 0.6);
+
 //Top Instructions
 draw_set_font(Class_Font_New_Menu);                                                 //Set the font
 var Class_NotChosenColor = make_colour_rgb(255,255,255);

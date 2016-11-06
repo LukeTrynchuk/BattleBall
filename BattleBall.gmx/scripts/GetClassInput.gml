@@ -19,4 +19,5 @@ if(gamepad_is_connected(gp_id))
     
     confirm = gamepad_button_check_pressed(gp_id,gp_face1);
     back = gamepad_button_check_pressed(gp_id,gp_face2);
+    start = gamepad_button_check_pressed(gp_id, gp_start);
 }
