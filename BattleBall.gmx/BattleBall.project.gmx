@@ -83,6 +83,8 @@
     <sprites name="Title">
       <sprite>sprites\Title</sprite>
       <sprite>sprites\Title_JustName</sprite>
+      <sprite>sprites\Battle_Ball_Logo</sprite>
+      <sprite>sprites\Title_Screen</sprite>
     </sprites>
     <sprites name="Player">
       <sprites name="Player1">

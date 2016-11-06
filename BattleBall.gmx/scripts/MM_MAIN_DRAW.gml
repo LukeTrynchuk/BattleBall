@@ -33,7 +33,7 @@ switch(Current_Selected_Option)
         break;
 }
 
-draw_sprite_ext(Title_JustName, 0, X_Start - 60, Y_Start - OptionOffset * 1.5, 1,1,0,c_white, 1);                   //Draw the game title
+draw_sprite_ext(Battle_Ball_Logo, 0, X_Start - 60, Y_Start - OptionOffset * 1.5 - 10, 0.18,0.18,0,c_white, 1);                   //Draw the game title
 
 //Draw the boxes for player info
 var Box_col = make_colour_rgb(45,45,45);

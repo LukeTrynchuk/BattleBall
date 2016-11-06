@@ -59,10 +59,12 @@ if(Next_Room &amp;&amp; room == rm_menu)                            //If input a
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>var d_col = make_colour_rgb(200,200,200);
+            <string>draw_sprite_ext(Title_Screen, 0, room_width / 2, room_height / 2, 0.3, 0.3, 0, c_white, 1);
+
+var d_col = make_colour_rgb(200,200,200);
 draw_set_colour(d_col);
 draw_text(room_width / 2 - 60,room_height / 2 + 100,"A to start Game");
-draw_sprite_ext(Title,0,room_width / 2, room_height / 2, 2,2,0,c_white,1);
+//draw_sprite_ext(Title,0,room_width / 2, room_height / 2, 2,2,0,c_white,1);
 </string>
           </argument>
         </arguments>
