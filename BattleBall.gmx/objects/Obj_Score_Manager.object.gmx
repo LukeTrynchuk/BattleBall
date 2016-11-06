@@ -49,25 +49,16 @@ global.player2_score = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(Top_Banner, 0,0,0,room_width, 75, 0,c_white, 0.5);
+            <string>///Draw the score board
 
+draw_set_font(ScoreBoardFont);
+var Time_col = make_colour_rgb(200,200,200);
 
-draw_text_colour(room_width / 2 - 200, 15,string(global.player1_score), c_black, c_black, c_black, c_black,1);
-draw_text_colour(room_width / 2 + 200 - (string_width(string(global.player2_score))),15,string(global.player2_score), c_black, c_black, c_black, c_black,1);
+draw_text_colour(room_width / 2 - 96, 17,string(global.player1_score), Time_col, Time_col, Time_col, Time_col,0.3);
+draw_text_colour(room_width / 2 + 96 - (string_width(string(global.player2_score))),17,string(global.player2_score), Time_col, Time_col, Time_col, Time_col,0.3);
 
-draw_text_colour(room_width / 2 - 200 ,10,string(global.player1_score), c_gray, c_gray, c_gray, c_gray,1);
-draw_text_colour(room_width / 2 + 200 - (string_width(string(global.player2_score))),10,string(global.player2_score), c_gray, c_gray, c_gray, c_gray, 1);
-
-draw_sprite_ext(Top_Banner, 0,room_width / 2 - 100, 0, 2, 75, 0, c_white, 1);
-draw_sprite_ext(Top_Banner, 0,room_width / 2 + 100, 0, 2, 75, 0, c_white, 1);
-
-draw_sprite_ext(Player_Head, 0, 60, 37, 2.5, 2.5, 0, c_white, 1);
-draw_sprite_ext(Player_Head, 0, room_width - 60, 37, -2.5,2.5,0,c_white, 1);
-
-draw_sprite_ext(Player_Head_Box, 0, 60, 37, 2.3,2.3,0,c_white, 1);
-draw_sprite_ext(Player_Head_Box_2,0, room_width - 60, 37, 2.3, 2.3, 0, c_white, 1);
-
-
+draw_text_colour(room_width / 2 - 100, 17,string(global.player1_score), c_white, c_white, c_white, c_white,1);
+draw_text_colour(room_width / 2 + 100 - (string_width(string(global.player2_score))),17,string(global.player2_score), c_white, c_white, c_white, c_white,1);
 </string>
           </argument>
         </arguments>

@@ -264,6 +264,7 @@
       <sprite>sprites\DogHouse_Logo</sprite>
     </sprites>
     <sprite>sprites\Speed_Pickup</sprite>
+    <sprite>sprites\Score_Board</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -369,6 +370,7 @@
     <font>fonts\Perk_Desc_Font</font>
     <font>fonts\Game_Descriptions</font>
     <font>fonts\Item_Description</font>
+    <font>fonts\ScoreBoardFont</font>
   </fonts>
   <objects name="objects">
     <objects name="effects">

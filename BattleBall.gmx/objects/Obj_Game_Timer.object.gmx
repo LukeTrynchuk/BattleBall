@@ -128,11 +128,12 @@ if(global.SecondsLeft == 0)
           <argument>
             <kind>1</kind>
             <string>///Draw the time
-Timer_Font_Script();
-draw_text(room_width / 2 - (string_width(string(global.SecondsLeft)) * 0.5),15,string(global.SecondsLeft));
-draw_set_alpha(1);
-draw_set_colour(c_gray);
-draw_text(room_width / 2 - (string_width(string(global.SecondsLeft)) * 0.5),10,string(global.SecondsLeft));
+draw_sprite_ext(Score_Board, 0, room_width / 2, 24, 0.5,0.5,0,c_white, 1);
+
+//Timer_Font_Script();
+draw_set_font(ScoreBoardFont);
+var Time_col = make_colour_rgb(200,200,200);
+draw_text_colour(room_width / 2 - (string_width(string(global.SecondsLeft)) * 0.5), 10, string(global.SecondsLeft), Time_col, Time_col, Time_col, Time_col, 1);
 </string>
           </argument>
         </arguments>
