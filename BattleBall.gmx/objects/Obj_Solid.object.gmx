@@ -120,29 +120,32 @@ audio_em = audio_emitter_create();
           <argument>
             <kind>1</kind>
             <string>//P = other.playerID;
-P = Obj_player;
-var vibL = 0.5;
-var vibR = 0.5;
-var Distance = point_distance(x, y, (P).x, (P).y);
-
-if((P).x &gt; x)
+if(instance_exists(global.player1))
 {
-    vibL += 0.5 * ((room_width - Distance) / room_width);
+    P = Obj_player;
+    var vibL = 0.5;
+    var vibR = 0.5;
+    var Distance = point_distance(x, y, (P).x, (P).y);
+    
+    if((P).x &gt; x)
+    {
+        vibL += 0.5 * ((room_width - Distance) / room_width);
+    }
+    else
+    {
+        vibR += 0.5 * ((room_width - Distance) / room_width);
+    }
+    
+    gamepad_set_vibration(0,vibL,vibR);
+    alarm[0] = room_speed;
+    
+    //if(!audio_emitter_exists(audio_em))
+    //{
+        //audio_em = audio_emitter_create();
+       // alarm[2] = room_speed;
+    //}
+    Playhit(Bullet_Dirt_hit, audio_em);
 }
-else
-{
-    vibR += 0.5 * ((room_width - Distance) / room_width);
-}
-
-gamepad_set_vibration(0,vibL,vibR);
-alarm[0] = room_speed;
-
-//if(!audio_emitter_exists(audio_em))
-//{
-    //audio_em = audio_emitter_create();
-   // alarm[2] = room_speed;
-//}
-Playhit(Bullet_Dirt_hit, audio_em);
 </string>
           </argument>
         </arguments>
