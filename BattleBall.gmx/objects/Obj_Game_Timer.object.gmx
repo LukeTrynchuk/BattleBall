@@ -29,7 +29,7 @@
 countdown_counter = 0;
 
 global.ShakeAmount = 2;
-global.SecondsLeft = 120;
+global.SecondsLeft = 25;
 alarm[0] = room_speed;
 alarm[1] = room_speed;
 MachineGunTime = 100;
@@ -121,7 +121,7 @@ gamepad_set_vibration(0, 0, 0);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>///Drain the timer
 if(myTimeState == TIME_STATE.TS_PLAYING)
 {
     global.SecondsLeft = global.SecondsLeft - 1;
@@ -132,6 +132,16 @@ if(myTimeState == TIME_STATE.TS_PLAYING)
         with(global.player1) instance_destroy();
         with(global.player2) instance_destroy();
         with(global.Ball) instance_destroy();
+        
+        if(global.player1_score &gt; global.player2_score)             //Increment the money
+        {
+            global.Money += global.MoneyWinIncrease;
+        }
+        else
+        {
+            global.Money += global.MoneyLoseIncrease;
+        }
+        
         myTimeState = TIME_STATE.TS_END;
     }
 }
@@ -251,12 +261,25 @@ else if (myTimeState == TIME_STATE.TS_END)
     draw_text_colour(room_width / 5 - string_width(string(global.player1_score)), room_height / 2, string(global.player1_score), blue, blue, blue, blue, 1);
     draw_text_colour(room_width / 5 * 4, room_height / 2, string(global.player2_score), c_orange, c_orange, c_orange, c_orange, 1);
     
+    //Currency variables
+    var cur_x = room_width / 6;
+    var cur_x2 = room_width / 6 * 5;
+    var cur_y = room_height / 2;
+    
     if(global.player1_score &gt; global.player2_score)
     {
         draw_sprite_ext(END_GAME_WIN, 0, room_width / 2, room_height / 2 - 100, 1,1,0, c_white, 1);
         
         draw_sprite_ext(player_idle, 0, room_width / 2 + 4, room_height / 2 + 25, 1,1,0, c_white, 1);
         draw_sprite_ext(player_idle_p2, 0, room_width / 2 + 107, room_height / 2 + 71, 1,1,0,c_white, 1);
+        
+        //Currency
+        draw_set_font(Main_Menu_Font);
+        draw_sprite_ext(TEMP_Currency, 0, cur_x, cur_y + 200, 0.3, 0.3, 0, c_white, 1);
+        draw_text(cur_x + 25, cur_y + 190, "x" + string(global.MoneyWinIncrease));
+        
+        draw_sprite_ext(TEMP_Currency, 0, cur_x2, cur_y + 200, 0.3, 0.3, 0, c_white, 1);
+        draw_text(cur_x2 + 25, cur_y + 190, "x" + string(global.MoneyLoseIncrease));  
     }
     else
     {
@@ -264,6 +287,14 @@ else if (myTimeState == TIME_STATE.TS_END)
         
         draw_sprite_ext(player_idle_p2, 0, room_width / 2 + 4, room_height / 2 + 25, 1,1,0, c_white, 1);
         draw_sprite_ext(player_idle, 0, room_width / 2 + 107, room_height / 2 + 71, 1,1,0,c_white, 1);
+        
+        //Currency
+        draw_set_font(Main_Menu_Font);
+        draw_sprite_ext(TEMP_Currency, 0, cur_x, cur_y + 200, 0.3, 0.3, 0, c_white, 1);
+        draw_text(cur_x + 25, cur_y + 190, "x" + string(global.MoneyLoseIncrease));
+        
+        draw_sprite_ext(TEMP_Currency, 0, cur_x2, cur_y + 200, 0.3, 0.3, 0, c_white, 1);
+        draw_text(cur_x2 + 25, cur_y + 190, "x" + string(global.MoneyWinIncrease)); 
     }
 }
 </string>

@@ -22,3 +22,11 @@ else
     draw_text_colour(room_width - 80, room_height - 38, "Confirm", version_col, version_col, version_col, version_col, 1);
 }
 
+//Draw the current amount of money
+var Cur_X = room_width * 0.82 - string_width(string(global.Money));
+var Cur_Y = 35;
+draw_sprite_ext(TEMP_Currency, 0, Cur_X, Cur_Y, 0.3, 0.3, 0, c_white, 1);
+draw_text(Cur_X + 45, Cur_Y - 10, string(global.Money) + "  Upgrade Points");
+draw_rectangle_colour(Cur_X - 25, Cur_Y - 20, Cur_X + 60 + string_width(string(global.Money) + "  Upgrade Points"), Cur_Y + 20, noone, noone,noone,noone, true);
+
+

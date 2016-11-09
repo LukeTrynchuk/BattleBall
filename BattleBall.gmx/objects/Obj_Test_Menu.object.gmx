@@ -37,7 +37,7 @@ SpriteHeight = 70;                                                              
 
 ControlScale = 0.3;                                                                 //For scaling
 
-Version = "11.06.16";                                                               //The current version build
+Version = "11.13.16";                                                               //The current version build
 
 audio_em = audio_emitter_create();                                                  //Create our audio emitter object
 

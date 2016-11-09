@@ -287,6 +287,9 @@
       <sprite>sprites\END_GAME_LOSE</sprite>
       <sprite>sprites\END_GAME_PEDASTAL</sprite>
     </sprites>
+    <sprites name="Collectables">
+      <sprite>sprites\TEMP_Currency</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -480,6 +483,7 @@
     </objects>
     <objects name="Player">
       <object>objects\Obj_player</object>
+      <object>objects\Obj_PlayerStats</object>
     </objects>
   </objects>
   <rooms name="rooms">
