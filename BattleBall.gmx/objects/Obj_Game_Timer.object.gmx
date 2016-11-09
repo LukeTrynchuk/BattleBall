@@ -129,7 +129,13 @@ if(myTimeState == TIME_STATE.TS_PLAYING)
     
     if(global.SecondsLeft == 0)
     {
-        with(global.player1) instance_destroy();
+        var numShots = 0;
+        with(global.player1)
+        {
+            other.numShots = numShots;
+            instance_destroy();
+        }
+        AddExperience(numShots, global.player1_score);              //Add the experience points to the player
         with(global.player2) instance_destroy();
         with(global.Ball) instance_destroy();
         

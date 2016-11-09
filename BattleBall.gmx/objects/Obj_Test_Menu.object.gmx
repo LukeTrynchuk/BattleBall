@@ -48,11 +48,6 @@ audio_em = audio_emitter_create();                                              
 //====================================TEMPORARY VARIABLES=============================================
 PlayerName = "Gene Fowler";                                                         //This will be replaced eventually by requesting the username of
                                                                                         //the user depending on the platform (Steam, PSN, Xbox Live).
-                                                                                        
-SniperExp = 123;                                                                    //Arbitrary for now, just to show that it will be implemented later.
-PistolExp = 348;
-MachinegunExp = 50;
-MinigunExp = 230;
 </string>
           </argument>
         </arguments>

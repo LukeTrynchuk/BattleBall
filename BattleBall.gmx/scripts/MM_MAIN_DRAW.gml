@@ -41,8 +41,23 @@ draw_line_width_colour(room_width - 400,200, room_width - 100, 200, 30,  Box_col
 
 var Name_col = make_colour_rgb(246, 216, 53);
 draw_text_colour(room_width - 390,193, PlayerName, Name_col, Name_col, Name_col, Name_col, 1);                      //Draw the player name
-draw_text_colour(room_width - 140,193, "lvl 5", Name_col, Name_col, Name_col, Name_col, 1);                         //Just to tease leveling up
 
+//Draw the current level for the gun
+switch(global.Class_Type[global.Current_Class])
+{
+    case "Pistol":
+        draw_text_colour(room_width - 140,193, "lvl " + string(global.PistolLvl), Name_col, Name_col, Name_col, Name_col, 1);                         //Just to tease leveling up
+        break;
+    case "MachineGun":
+        draw_text_colour(room_width - 140,193, "lvl " + string(global.MachineGunLvl), Name_col, Name_col, Name_col, Name_col, 1);                         //Just to tease leveling up
+        break;
+    case "Minigun":
+        draw_text_colour(room_width - 140,193, "lvl " + string(global.MinigunLvl), Name_col, Name_col, Name_col, Name_col, 1);                         //Just to tease leveling up
+        break;
+    case "Sniper":
+        draw_text_colour(room_width - 140,193, "lvl " + string(global.SniperLvl), Name_col, Name_col, Name_col, Name_col, 1);                         //Just to tease leveling up
+        break;
+}
 
 //Draw the class info stuff
 var ClassInfoX = room_width - 300;
@@ -52,16 +67,16 @@ draw_line_width_colour(room_width - 300,250, room_width - 100, 250, 30,  Box_col
 switch(global.Current_Class)
 {
     case 0:
-        draw_text_colour(ClassInfoX + 10, ClassInfoY - 7, "Pistol : " + string(PistolExp) + "xp", c_white, c_white, c_white, c_white, 1);
+        draw_text_colour(ClassInfoX + 10, ClassInfoY - 7, "Pistol : " + string(global.PistolExp) + " / " + string(CalculateExp(global.PistolLvl)) + " xp", c_white, c_white, c_white, c_white, 1);
         break;
     case 1:
-        draw_text_colour(ClassInfoX + 10, ClassInfoY - 7, "Machine Gun : " + string(MachinegunExp) + "xp", c_white, c_white, c_white, c_white, 1);
+        draw_text_colour(ClassInfoX + 10, ClassInfoY - 7, "Machine Gun : " + string(global.MachineGunExp) + " / " + string(CalculateExp(global.MachineGunLvl)) + " xp", c_white, c_white, c_white, c_white, 1);
         break;
     case 2:
-        draw_text_colour(ClassInfoX + 10, ClassInfoY - 7, "Minigun : " + string(MinigunExp) + "xp", c_white, c_white, c_white, c_white, 1);
+        draw_text_colour(ClassInfoX + 10, ClassInfoY - 7, "Minigun : " + string(global.MinigunExp) + " / " + string(CalculateExp(global.MinigunLvl)) + " xp", c_white, c_white, c_white, c_white, 1);
         break;
     case 3:
-        draw_text_colour(ClassInfoX + 10, ClassInfoY - 7, "Sniper : " + string(SniperExp) + "xp", c_white, c_white, c_white, c_white, 1);
+        draw_text_colour(ClassInfoX + 10, ClassInfoY - 7, "Sniper : " + string(global.SniperExp) + " / " + string(CalculateExp(global.SniperLvl)) + " xp", c_white, c_white, c_white, c_white, 1);
         break;
 }
 

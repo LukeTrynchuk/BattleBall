@@ -191,6 +191,8 @@ MinigunSoundCounter = 8;                    //This variable makes sure that we d
                                                 //and make it not sound good. This may be changed and not used if we 
                                                 //change to a sfx that does not have multiple shots in it. I used 
                                                 //8 because I found that 8 was a good time to make it sound seamless.
+                                                
+numShots = 0;                                   //For keeping track of the number of shots taken by the gun
 </string>
           </argument>
         </arguments>

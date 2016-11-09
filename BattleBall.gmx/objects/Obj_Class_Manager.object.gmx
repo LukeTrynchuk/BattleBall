@@ -28,35 +28,47 @@
             <string>///List of available classes
 
 //=================GUNS=================
+//This is the name of the gun 
 global.Gun_Name[0] = "Ol' Rusty";                   //0
 global.Gun_Name[1] = "Eh Kay 47";                   //1
 global.Gun_Name[2] = "Spitter";                     //2
 global.Gun_Name[3] = "Blind Eye";                   //3
 
+//This is the gun used in the class
 global.Class_Gun[0] = "Pistol";                     //0
 global.Class_Gun[1] = "MachineGun";                 //1
 global.Class_Gun[2] = "Minigun";                    //2
 global.Class_Gun[3] = "Sniper";                     //3
 
+//This is the type of class
+global.Class_Type[0] = "Pistol";                    //0
+global.Class_Type[1] = "MachineGun";                //1
+global.Class_Type[2] = "Minigun";                   //2
+global.Class_Type[3] = "Sniper";                    //3
+
 //=================PERKS================
+//All available perks
 global.Perks [0] = "TripleJumpPerk";
 global.Perks [1] = "RateOfFirePerk";
 global.Perks [2] = "ExtraExplosivePerk";
 global.Perks [3] = "DashCooldownPerk";
 global.Perks [4] = "SmashPerk";
 
+//Actual name of the perk
 global.Perk_Name[0] = "Triple Jump";
 global.Perk_Name[1] = "Increased Rate of Fire";
 global.Perk_Name[2] = "Extra Explosive";
 global.Perk_Name[3] = "Small Dash Cooldown";
 global.Perk_Name[4] = "Ground Smash";
 
+//Sprite for the perk
 global.PerksSp [0] = TripleJumpPerk;
 global.PerksSp [1] = RateOfFirePerk;
 global.PerksSp [2] = ExtraExplosivePerk;
 global.PerksSp [3] = DashCooldownPerk;
 global.PerksSp [4] = SmashPerk;
 
+//The perks chosen for the classes
 global.Class_Perk_Num[0] = 0;                                   //0
 global.Class_Perk_Num[1] = 1;
 global.Class_Perk_Num[2] = 2;                                   //1
@@ -68,6 +80,7 @@ global.Class_Perk_Num[7] = 4;
 
 Update_Class_Perks();
 
+//The description of the perks
 global.Perk_Desc[0] = "Increase your jumping ability. Be able to triple jump.";
 global.Perk_Desc[1] = "Increase rate of fire. Your fire rate is now 1.25x faster.";
 global.Perk_Desc[2] = "Carry an aditional explosive. You may now have 3 explosives
@@ -76,6 +89,7 @@ global.Perk_Desc[3] = "Lower dash cooldown. You will now be able to dash more of
 global.Perk_Desc[4] = "Smash to the ground. Your mightly smash will cause explosions!";
 
 //=================EXPENDABLES===========
+//The expendable chosen for each class
 global.Class_Expendable[0] = "Grenade";           //0
 global.Class_Expendable[1] = "Grenade";           //1
 global.Class_Expendable[2] = "Grenade";           //2

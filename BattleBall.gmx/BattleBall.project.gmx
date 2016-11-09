@@ -305,6 +305,11 @@
       <scripts name="States">
         <script>scripts\Move.gml</script>
       </scripts>
+      <scripts name="Experience">
+        <script>scripts\CalculateExp.gml</script>
+        <script>scripts\EarnedExp.gml</script>
+        <script>scripts\AddExperience.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Effects">
       <script>scripts\Create_Dash_Effect.gml</script>
