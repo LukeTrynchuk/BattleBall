@@ -41,6 +41,8 @@ global.MachineGunLvl = 1;       //The level for the machine gun class
 global.MinigunLvl = 1;          //The level for the minigun class
 global.SniperLvl = 1;           //The level for the sniper class
 
+global.WinMatchExp = 500;       //The amount of exp you gain from winning a match
+
 global.LvlCap = 50;             //Set the level cap for the different classes 
 </string>
           </argument>

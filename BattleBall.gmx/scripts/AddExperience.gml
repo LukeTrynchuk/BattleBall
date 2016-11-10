@@ -2,7 +2,9 @@
 var numShots = argument[0];
 var numGoals = argument[1];
 var Exp = EarnedExp(numShots, numGoals);
-
+var WinExp = 0;
+if(global.player1_score > global.player2_score) WinExp = global.WinMatchExp;
+Exp += WinExp;
 
 //Increment the experience points
 switch(global.Class_Type[global.Current_Class])
@@ -13,6 +15,7 @@ switch(global.Class_Type[global.Current_Class])
         {
             global.PistolExp = global.PistolExp % CalculateExp(global.PistolLvl);
             global.PistolLvl++;
+            LevelEffInst = instance_create(x,y,Obj_LevelUp_Effect);
         }
         break;
     case "MachineGun":
@@ -21,6 +24,7 @@ switch(global.Class_Type[global.Current_Class])
         {
             global.MachineGunExp = global.MachineGunExp % CalculateExp(global.MachineGunLvl);
             global.MachineGunLvl++;
+            LevelEffInst = instance_create(x,y,Obj_LevelUp_Effect);
         }
         break;
     case "Minigun":
@@ -29,6 +33,7 @@ switch(global.Class_Type[global.Current_Class])
         {
             global.MinigunExp = global.MinigunExp % CalculateExp(global.MinigunLvl);
             global.MinigunLvl++;
+            LevelEffInst = instance_create(x,y,Obj_LevelUp_Effect);
         }
         break;
     case "Sniper":
@@ -37,6 +42,7 @@ switch(global.Class_Type[global.Current_Class])
         {
             global.SniperExp = global.SniperExp % CalculateExp(global.SniperLvl);
             global.SniperLvl++;
+            LevelEffInst = instance_create(x,y,Obj_LevelUp_Effect);
         }
         break;
 }

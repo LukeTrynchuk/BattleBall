@@ -41,6 +41,10 @@ enum TIME_STATE
 };
 
 myTimeState = TIME_STATE.TS_PLAYING;
+
+Exp = 0;
+
+LevelEffInst = noone;               //The instance of the level up effect
 </string>
           </argument>
         </arguments>
@@ -129,13 +133,9 @@ if(myTimeState == TIME_STATE.TS_PLAYING)
     
     if(global.SecondsLeft == 0)
     {
-        var numShots = 0;
-        with(global.player1)
-        {
-            other.numShots = numShots;
-            instance_destroy();
-        }
-        AddExperience(numShots, global.player1_score);              //Add the experience points to the player
+        numShot = global.player1.numShots;
+        
+        with(global.player1) instance_destroy();
         with(global.player2) instance_destroy();
         with(global.Ball) instance_destroy();
         
@@ -147,6 +147,9 @@ if(myTimeState == TIME_STATE.TS_PLAYING)
         {
             global.Money += global.MoneyLoseIncrease;
         }
+        
+        Exp = EarnedExp(numShot, global.player1_score);            //Calculate the earned experience
+        AddExperience(numShot, global.player1_score);              //Add the experience points to the player
         
         myTimeState = TIME_STATE.TS_END;
     }
@@ -177,7 +180,7 @@ else if (myTimeState == TIME_STATE.TS_END)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (myTimeState == TIME_STATE.TS_END)
+            <string>if (myTimeState == TIME_STATE.TS_END &amp;&amp; !instance_exists(LevelEffInst))
 {
     if(gamepad_button_check_released(0, gp_face3))
     {
@@ -257,7 +260,7 @@ if(myTimeState == TIME_STATE.TS_PLAYING)
         }
     }
 }
-else if (myTimeState == TIME_STATE.TS_END)
+else if (myTimeState == TIME_STATE.TS_END &amp;&amp; !instance_exists(LevelEffInst))
 {
     draw_sprite_ext(Top_Banner, 0, 0, room_height / 2 - 150, room_width, 400, 0, c_white, 1);
     draw_sprite_ext(END_GAME_PEDASTAL, 0, room_width / 2 + 55, room_height / 2 + 120, 0.8,0.8,0,c_white, 1);
@@ -268,8 +271,8 @@ else if (myTimeState == TIME_STATE.TS_END)
     draw_text_colour(room_width / 5 * 4, room_height / 2, string(global.player2_score), c_orange, c_orange, c_orange, c_orange, 1);
     
     //Currency variables
-    var cur_x = room_width / 6;
-    var cur_x2 = room_width / 6 * 5;
+    var cur_x = room_width / 6 - 15;
+    var cur_x2 = room_width / 6 * 5 - 15;
     var cur_y = room_height / 2;
     
     if(global.player1_score &gt; global.player2_score)
@@ -302,6 +305,8 @@ else if (myTimeState == TIME_STATE.TS_END)
         draw_sprite_ext(TEMP_Currency, 0, cur_x2, cur_y + 200, 0.3, 0.3, 0, c_white, 1);
         draw_text(cur_x2 + 25, cur_y + 190, "x" + string(global.MoneyWinIncrease)); 
     }
+    
+    draw_text(room_width / 6 - (string_width("EXP : +" + string(Exp)) * 0.5), room_height / 4 * 3 - 50, "EXP : +" + string(Exp));         //Draw the earned experience
 }
 </string>
           </argument>

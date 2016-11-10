@@ -661,7 +661,9 @@ if(right_trigger &amp;&amp; canShoot)                                           
         else if ( phy_position_x &gt; room_width/2)
         {
         audio_emitter_position(audio_s, -100, y, 0);
-        }                                                                                                                       
+        }         
+        
+     numShots++;                                                                                                              
                                         
     var myGun = global.Class_Gun[global.Current_Class];                                                              
     if(myGun == "Pistol")                                                                                  //If the current gun type is pistol

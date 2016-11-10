@@ -65,6 +65,10 @@
       <sounds name="confetti">
         <sound>sound\snd_confetti</sound>
       </sounds>
+      <sounds name="Level up">
+        <sound>sound\snd_levelup_tune</sound>
+        <sound>sound\snd_levelup_swipe</sound>
+      </sounds>
     </sounds>
     <sounds name="Main Menu">
       <sound>sound\MM_Music4</sound>
@@ -184,6 +188,12 @@
         <sprite>sprites\SCORE</sprite>
         <sprite>sprites\sprite_ring</sprite>
         <sprite>sprites\sprite_confetti</sprite>
+      </sprites>
+      <sprites name="Levelup Effect">
+        <sprite>sprites\Paint_Stroke</sprite>
+        <sprite>sprites\LevelUp_1</sprite>
+        <sprite>sprites\LevelUp_2</sprite>
+        <sprite>sprites\LevelUp_3</sprite>
       </sprites>
     </sprites>
     <sprites name="Menu Items">
@@ -428,6 +438,7 @@
         <object>objects\ObjectRipple</object>
         <object>objects\Obj_Confetti</object>
       </objects>
+      <object>objects\Obj_LevelUp_Effect</object>
     </objects>
     <objects name="Bullets">
       <object>objects\Obj_Bullet_Parent</object>
