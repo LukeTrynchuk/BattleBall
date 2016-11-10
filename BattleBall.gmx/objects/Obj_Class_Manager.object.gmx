@@ -29,18 +29,42 @@
 
 //=================GUNS=================
 //This is the name of the gun 
-global.Num_Guns_Per_Type = 1;                       //Number of guns per type
+global.Num_Guns_Per_Type = 2;                       //Number of guns per type
 
 //This is the gun number for the class
-global.Class_Gun_Num[0] = 0;                        //0
-global.Class_Gun_Num[1] = 1;                        //1
-global.Class_Gun_Num[2] = 2;                        //2
-global.Class_Gun_Num[3] = 3;                        //3
+global.Class_Gun_Num[0] = global.Num_Guns_Per_Type * 0; //0
+global.Class_Gun_Num[1] = global.Num_Guns_Per_Type * 1; //1
+global.Class_Gun_Num[2] = global.Num_Guns_Per_Type * 2; //2
+global.Class_Gun_Num[3] = global.Num_Guns_Per_Type * 3; //3
 
-global.Gun_Name[0] = "Ol' Rusty";                   //0
-global.Gun_Name[1] = "Eh Kay 47";                   //1
-global.Gun_Name[2] = "Spitter";                     //2
-global.Gun_Name[3] = "Blind Eye";                   //3
+//Different available guns
+global.Gun_Name[0] = "Ol' Rusty";                   //0     -Pistols
+global.Gun_Name[1] = "Bean Shooter";              //1
+global.Gun_Name[2] = "Eh Kay 47";                   //2     -Machine Guns
+global.Gun_Name[3] = "Karbon";                      //3
+global.Gun_Name[4] = "Spitter";                     //4     -Miniguns
+global.Gun_Name[5] = "Bombs Away";                  //5
+global.Gun_Name[6] = "Blind Eye";                   //6     -Snipers
+global.Gun_Name[7] = "Dark Shot";                   //7
+
+//The sprites that go with the individual guns
+global.Gun_Sprite[0] = Pistol;
+global.Gun_Sprite[1] = Pistol2;
+global.Gun_Sprite[2] = Machinegun;
+global.Gun_Sprite[3] = Machinegun2;
+global.Gun_Sprite[4] = Minigun;
+global.Gun_Sprite[5] = Minigun2;
+global.Gun_Sprite[6] = Sniper;
+global.Gun_Sprite[7] = Sniper2;
+
+global.Gun_Desc[0] = "It works, we think...";
+global.Gun_Desc[1] = "Eat your greens!";
+global.Gun_Desc[2] = "Powerful yet reliable";
+global.Gun_Desc[3] = "Let there be Karbon!";
+global.Gun_Desc[4] = "Rip your enemey apart";
+global.Gun_Desc[5] = "Your enemey won't remember anything";
+global.Gun_Desc[6] = "Hit rate of 0.00%!";
+global.Gun_Desc[7] = "Maybe it'll hit, who knows!";
 
 //This is the gun used in the class
 global.Class_Gun[0] = "Pistol";                     //0

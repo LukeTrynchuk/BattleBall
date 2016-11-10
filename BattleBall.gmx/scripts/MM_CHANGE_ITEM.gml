@@ -15,16 +15,22 @@ if((up || down) && CanSwitchClass)
             CurrentItem = clamp(CurrentItem, 0, array_length_1d(global.Perks) -1);
             if(LastItem != CurrentItem) Playhit(snd_Switch, audio_em);
             break;
+        case EditingType.GUNS:
+            CurrentItem = clamp(CurrentItem, 0, global.Num_Guns_Per_Type - 1);
+            if(LastItem != CurrentItem) Playhit(snd_Switch, audio_em);
+            break;
     }
     Reset_Menu_Timer();                                                                                 //Reset the timer
 }
 else if (confirm)
 {
     MM_CHANGE_ITEM_CONFIRM();
+    CurrentItem = 0;
     Reset_Menu_Timer();                                                                                 //Reset the timer
 }
 else if (back)
 {
     MM_CHANGE_ITEM_BACK();
+    CurrentItem = 0;
     Reset_Menu_Timer();
 }

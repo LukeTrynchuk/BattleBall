@@ -26,21 +26,7 @@ if(myEditingType == EditingType.GUNS) GunAlpha = 1;
 var Gun_X = 675;
 var Gun_Y = 350;
 draw_sprite_ext(Item_Square, 0,Gun_X, Gun_Y, 1.2,1.2,0,c_white, 1);                                             //Draw the gun item square
-switch(global.Class_Gun[Current_Class_Option])                                                          //Draw the different appropriate gun sprites
-{
-    case "Pistol":
-        draw_sprite_ext(Pistol, 0, Gun_X,Gun_Y,5,5,0, c_white, GunAlpha);
-        break;
-    case "MachineGun":
-        draw_sprite_ext(Machinegun, 0,Gun_X,Gun_Y,5,5,0,c_white,GunAlpha);
-        break;
-    case "Minigun":
-        draw_sprite_ext(Minigun, 0,Gun_X,Gun_Y,5,5,0,c_white, GunAlpha);
-        break;
-    case "Sniper":
-        draw_sprite_ext(Sniper, 0, Gun_X,Gun_Y,5,5,0,c_white,GunAlpha);
-        break;
-}
+draw_sprite_ext(global.Gun_Sprite[global.Class_Gun_Num[Current_Class_Option]], 0, Gun_X, Gun_Y, 5,5,0,c_white, GunAlpha);
 
 //draw the perks
 var Perk_X = 575;
@@ -160,6 +146,9 @@ if(myEditingType == EditingType.GUNS)
     
     draw_line_width_colour(N_x, N_y, N_x + 20 + string_width(global.Gun_Name[global.Class_Gun_Num[Current_Class_Option]]), N_y, 30, Flag_Col, Flag_Col);
     draw_text_colour(N_x + 10,N_y - 13, global.Gun_Name[global.Class_Gun_Num[Current_Class_Option]], c_black, c_black, c_black, c_black, 1);
+    
+    draw_set_font(Perk_Desc_Font);
+    draw_text_colour(N_x, 850, global.Gun_Desc[global.Class_Gun_Num[Current_Class_Option]], m_col, m_col, m_col, m_col, 1);
 }
 
 //Drawing the perk name label
