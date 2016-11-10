@@ -258,10 +258,11 @@ Current_Selected_Option = 0;                //This is the current selected optio
             <kind>1</kind>
             <string>///MM_CHOOSE_CLASS variables
 
-myClasses[0] = "Pistol";
-myClasses[1] = "Machine_Gun";
-myClasses[2] = "Minigun";
-myClasses[3] = "Sniper";
+//Name of the classes
+myClasses[0] = "Class 1";
+myClasses[1] = "Class 2";
+myClasses[2] = "Class 3";
+myClasses[3] = "Class 4";
 
 Current_Class_Option = 0;
 
@@ -319,10 +320,11 @@ Note that this game type requires two local controllers.";
 
 enum EditingType
 {
-    PERKS
+    PERKS,
+    GUNS
 };
 
-myEditingType = EditingType.PERKS;          //Set the current editing type
+myEditingType = EditingType.GUNS;          //Set the current editing type
 
 CurrentPerk = 0;
 </string>

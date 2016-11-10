@@ -277,10 +277,22 @@
       <sprite>sprites\START_Button_360</sprite>
     </sprites>
     <sprites name="Guns">
-      <sprite>sprites\Pistol</sprite>
-      <sprite>sprites\Machinegun</sprite>
-      <sprite>sprites\Minigun</sprite>
-      <sprite>sprites\Sniper</sprite>
+      <sprites name="Pistols">
+        <sprite>sprites\Pistol</sprite>
+        <sprite>sprites\Pistol2</sprite>
+      </sprites>
+      <sprites name="MachineGuns">
+        <sprite>sprites\Machinegun</sprite>
+        <sprite>sprites\Machinegun2</sprite>
+      </sprites>
+      <sprites name="Minigun">
+        <sprite>sprites\Minigun</sprite>
+        <sprite>sprites\Minigun2</sprite>
+      </sprites>
+      <sprites name="Sniper">
+        <sprite>sprites\Sniper</sprite>
+        <sprite>sprites\Sniper2</sprite>
+      </sprites>
     </sprites>
     <sprites name="Company">
       <sprite>sprites\Loogaroo_Logo</sprite>

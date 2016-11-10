@@ -21,26 +21,28 @@ var Chosen_Offset = 25;
 draw_set_font(Class_Choose_Current_Font);                                                               //Draw the current class using appropriate font
 draw_text_colour(600, 100, myClasses[Current_Class_Option], c_white, c_white, c_white, c_white, 1);     //Draw the text of the current class
 
-
+var GunAlpha = 0.3;
+if(myEditingType == EditingType.GUNS) GunAlpha = 1;
 var Gun_X = 675;
 var Gun_Y = 350;
-draw_sprite_ext(Item_Square_Red, 0,Gun_X, Gun_Y, 1.2,1.2,0,c_white, 1);                                             //Draw the gun item square
+draw_sprite_ext(Item_Square, 0,Gun_X, Gun_Y, 1.2,1.2,0,c_white, 1);                                             //Draw the gun item square
 switch(global.Class_Gun[Current_Class_Option])                                                          //Draw the different appropriate gun sprites
 {
     case "Pistol":
-        draw_sprite_ext(Pistol, 0, Gun_X,Gun_Y,5,5,0, c_white, 1);
+        draw_sprite_ext(Pistol, 0, Gun_X,Gun_Y,5,5,0, c_white, GunAlpha);
         break;
     case "MachineGun":
-        draw_sprite_ext(Machinegun, 0,Gun_X,Gun_Y,5,5,0,c_white,1);
+        draw_sprite_ext(Machinegun, 0,Gun_X,Gun_Y,5,5,0,c_white,GunAlpha);
         break;
     case "Minigun":
-        draw_sprite_ext(Minigun, 0,Gun_X,Gun_Y,5,5,0,c_white, 1);
+        draw_sprite_ext(Minigun, 0,Gun_X,Gun_Y,5,5,0,c_white, GunAlpha);
         break;
     case "Sniper":
-        draw_sprite_ext(Sniper, 0, Gun_X,Gun_Y,5,5,0,c_white,1);
+        draw_sprite_ext(Sniper, 0, Gun_X,Gun_Y,5,5,0,c_white,GunAlpha);
         break;
 }
 
+//draw the perks
 var Perk_X = 575;
 var Perk_Y = 650;
 var Perk_Offset = 200;
@@ -53,53 +55,53 @@ for(var NumPerks = 0; NumPerks < 2; NumPerks++)                                 
     switch(global.Class_Perk[Current_Class_Option * 2 + NumPerks])
     {
         case "TripleJumpPerk":
-            if(CurrentPerk == NumPerks)
+            if(CurrentPerk == NumPerks && myEditingType == EditingType.PERKS)
             {
                 draw_sprite_ext(TripleJumpPerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 1);
             }
             else
             {
-                draw_sprite_ext(TripleJumpPerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 0.6);
+                draw_sprite_ext(TripleJumpPerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 0.3);
             }
             break;
         case "RateOfFirePerk":
-            if(CurrentPerk == NumPerks)
+            if(CurrentPerk == NumPerks && myEditingType == EditingType.PERKS)
             {
                 draw_sprite_ext(RateOfFirePerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 1);
             }
             else
             {
-                draw_sprite_ext(RateOfFirePerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 0.6);
+                draw_sprite_ext(RateOfFirePerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 0.3);
             }
             break;
         case "ExtraExplosivePerk":
-            if(CurrentPerk == NumPerks)
+            if(CurrentPerk == NumPerks && myEditingType == EditingType.PERKS)
             {
                 draw_sprite_ext(ExtraExplosivePerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 1);
             }
             else
             {
-                draw_sprite_ext(ExtraExplosivePerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 0.6);
+                draw_sprite_ext(ExtraExplosivePerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 0.3);
             }
             break;
         case "DashCooldownPerk":
-            if(CurrentPerk == NumPerks)
+            if(CurrentPerk == NumPerks && myEditingType == EditingType.PERKS)
             {
                 draw_sprite_ext(DashCooldownPerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 1);
             }
             else
             {
-                draw_sprite_ext(DashCooldownPerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 0.6);
+                draw_sprite_ext(DashCooldownPerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 0.3);
             }
             break;
         case "SmashPerk":
-            if(CurrentPerk == NumPerks)
+            if(CurrentPerk == NumPerks && myEditingType == EditingType.PERKS)
             {
                 draw_sprite_ext(SmashPerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 1);
             }
             else
             {
-                draw_sprite_ext(SmashPerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 0.6);
+                draw_sprite_ext(SmashPerk, 0, Perk_X + Perk_Offset * NumPerks,Perk_Y, 1,1,0,c_white, 0.3);
             }
             break;
     }
@@ -129,26 +131,49 @@ draw_text_colour(Gun_Stat_x, Gun_Stat_y, "Power", m_col, m_col, m_col, m_col, 1)
 draw_text_colour(Gun_Stat_x, Gun_Stat_y + Gun_Stat_Offset, "Kickback", m_col, m_col, m_col, m_col, 1);
 draw_text_colour(Gun_Stat_x, Gun_Stat_y + Gun_Stat_Offset * 2, "Accuracy", m_col, m_col, m_col, m_col, 1);
 
-//Draw the gun name
-var Flag_Col = make_colour_rgb(245, 205, 66);
-var N_x = 665 - (string_width(global.Gun_Name[Current_Class_Option]) * 0.5);
-var N_y = 400;
-draw_sprite_ext(Flag_End, 0, N_x + 20 + string_width(global.Gun_Name[Current_Class_Option]), N_y - 14, 1,1,0,c_white, 1);
-draw_sprite_ext(Flag_End, 0, N_x + 1, N_y - 14, -1,1,0,c_white, 1);
+var Type_X = 675;
+var Type_Y = 170;
+switch(global.Class_Type[Current_Class_Option])
+{
+    case "Pistol":
+        draw_text(Type_X - string_width("Light") * 0.5, Type_Y, "Light");
+        break;
+    case "MachineGun":
+        draw_text(Type_X - string_width("Gunsman") * 0.5, Type_Y, "Gunsman");
+        break;
+    case "Minigun":
+        draw_text(Type_X - string_width("Heavy") * 0.5, Type_Y, "Heavy");
+        break;
+    case "Sniper":
+        draw_text(Type_X - string_width("Recon") * 0.5, Type_Y, "Recon");
+        break;
+}
 
-draw_line_width_colour(N_x, N_y, N_x + 20 + string_width(global.Gun_Name[Current_Class_Option]), N_y, 30, Flag_Col, Flag_Col);
-draw_text_colour(N_x + 10,N_y - 13, global.Gun_Name[Current_Class_Option], c_black, c_black, c_black, c_black, 1);
+var Flag_Col = make_colour_rgb(245, 205, 66);
+//Draw the gun name
+if(myEditingType == EditingType.GUNS)
+{
+    var N_x = 665 - (string_width(global.Gun_Name[global.Class_Gun_Num[Current_Class_Option]]) * 0.5);
+    var N_y = 400;
+    draw_sprite_ext(Flag_End, 0, N_x + 20 + string_width(global.Gun_Name[global.Class_Gun_Num[Current_Class_Option]]), N_y - 14, 1,1,0,c_white, 1);
+    draw_sprite_ext(Flag_End, 0, N_x + 1, N_y - 14, -1,1,0,c_white, 1);
+    
+    draw_line_width_colour(N_x, N_y, N_x + 20 + string_width(global.Gun_Name[global.Class_Gun_Num[Current_Class_Option]]), N_y, 30, Flag_Col, Flag_Col);
+    draw_text_colour(N_x + 10,N_y - 13, global.Gun_Name[global.Class_Gun_Num[Current_Class_Option]], c_black, c_black, c_black, c_black, 1);
+}
 
 //Drawing the perk name label
-var N_x = 665 - (string_width(global.Perk_Name[global.Class_Perk_Num[Current_Class_Option * 2 + CurrentPerk]]) * 0.5);
-var N_y = 750;
-draw_sprite_ext(Flag_End, 0, N_x + 20 + string_width(global.Perk_Name[global.Class_Perk_Num[Current_Class_Option * 2 + CurrentPerk]]), N_y - 14, 1,1,0,c_white, 1);
-draw_sprite_ext(Flag_End, 0, N_x + 1, N_y - 14, -1,1,0,c_white, 1);
-
-draw_line_width_colour(N_x, N_y, N_x + 20 + string_width(global.Perk_Name[global.Class_Perk_Num[Current_Class_Option * 2 + CurrentPerk]]), N_y, 30, Flag_Col, Flag_Col);
-draw_text_colour(N_x + 10,N_y - 13, global.Perk_Name[global.Class_Perk_Num[Current_Class_Option * 2 + CurrentPerk]], c_black, c_black, c_black, c_black, 1);
-
-draw_set_font(Perk_Desc_Font);
-draw_text_colour(N_x - 150, N_y + 100, global.Perk_Desc[global.Class_Perk_Num[Current_Class_Option * 2 + CurrentPerk]], m_col, m_col, m_col, m_col, 1);
-
+if(myEditingType == EditingType.PERKS)
+{
+    var N_x = 665 - (string_width(global.Perk_Name[global.Class_Perk_Num[Current_Class_Option * 2 + CurrentPerk]]) * 0.5);
+    var N_y = 750;
+    draw_sprite_ext(Flag_End, 0, N_x + 20 + string_width(global.Perk_Name[global.Class_Perk_Num[Current_Class_Option * 2 + CurrentPerk]]), N_y - 14, 1,1,0,c_white, 1);
+    draw_sprite_ext(Flag_End, 0, N_x + 1, N_y - 14, -1,1,0,c_white, 1);
+    
+    draw_line_width_colour(N_x, N_y, N_x + 20 + string_width(global.Perk_Name[global.Class_Perk_Num[Current_Class_Option * 2 + CurrentPerk]]), N_y, 30, Flag_Col, Flag_Col);
+    draw_text_colour(N_x + 10,N_y - 13, global.Perk_Name[global.Class_Perk_Num[Current_Class_Option * 2 + CurrentPerk]], c_black, c_black, c_black, c_black, 1);
+    
+    draw_set_font(Perk_Desc_Font);
+    draw_text_colour(N_x - 150, N_y + 100, global.Perk_Desc[global.Class_Perk_Num[Current_Class_Option * 2 + CurrentPerk]], m_col, m_col, m_col, m_col, 1);
+}
 
