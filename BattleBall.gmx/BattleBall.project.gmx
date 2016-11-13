@@ -263,6 +263,20 @@
         </sprites>
         <sprite>sprites\Flag_End</sprite>
       </sprites>
+      <sprites name="Market Place">
+        <sprite>sprites\Crate</sprite>
+        <sprite>sprites\Market_Option</sprite>
+        <sprite>sprites\spr_Market_Bronze</sprite>
+        <sprite>sprites\spr_Market_Silver_Selected</sprite>
+        <sprite>sprites\spr_Market_Gold</sprite>
+        <sprite>sprites\Silver_Crate</sprite>
+        <sprite>sprites\Bronze_Crate</sprite>
+        <sprite>sprites\Gold_Crate</sprite>
+        <sprite>sprites\spr_Market_Bronze_Selected</sprite>
+        <sprite>sprites\spr_Market_Gold_Selected</sprite>
+        <sprite>sprites\Market_Chosen_Option</sprite>
+        <sprite>sprites\spr_Market_Silver</sprite>
+      </sprites>
     </sprites>
     <sprites name="XboxOne Buttons">
       <sprite>sprites\A_Button_One</sprite>
@@ -353,11 +367,14 @@
       <scripts name="Obj_Class_Chooser">
         <script>scripts\SetOpacityIndex.gml</script>
         <script>scripts\InitOpacity.gml</script>
+        <script>scripts\Update_Class_Perks.gml</script>
         <script>scripts\SetValues.gml</script>
         <script>scripts\ChangeWeapon.gml</script>
+        <script>scripts\DRAW_BARS.gml</script>
         <script>scripts\Reset_Menu_Timer.gml</script>
         <script>scripts\FindValidPerk.gml</script>
         <script>scripts\Draw_ChosenPerks.gml</script>
+        <script>scripts\Play_Background_Music.gml</script>
         <script>scripts\SetDisplayGun.gml</script>
         <script>scripts\SetBars.gml</script>
         <script>scripts\SetGunBars.gml</script>
@@ -374,6 +391,7 @@
               <script>scripts\MM_MENU_PLAY_GAME.gml</script>
               <script>scripts\MM_MENU_EDIT_CLASS.gml</script>
               <script>scripts\MM_MENU_QUIT.gml</script>
+              <script>scripts\MM_MENU_MARKET_PLACE.gml</script>
             </scripts>
             <scripts name="MM_CHOOSE_CLASS">
               <script>scripts\MM_CHOOSE_CLASS.gml</script>
@@ -396,8 +414,14 @@
               <script>scripts\MM_LEVEL_SELECT_CONFIRM.gml</script>
               <script>scripts\MM_LEVEL_SELECT_BACK.gml</script>
             </scripts>
+            <scripts name="MM_MARKET_PLACE">
+              <script>scripts\MM_MARKET_PLACE.gml</script>
+              <script>scripts\MM_MARKET_PLACE_CONFIRM.gml</script>
+              <script>scripts\MM_MARKET_PLACE_BACK.gml</script>
+            </scripts>
           </scripts>
           <scripts name="Draw">
+            <script>scripts\MM_MARKET_PLACE_DRAW.gml</script>
             <script>scripts\MM_MAIN_DRAW.gml</script>
             <script>scripts\MM_CHANGE_ITEM_DRAW.gml</script>
             <script>scripts\MM_CHOOSE_CLASS_DRAW.gml</script>
@@ -405,10 +429,7 @@
             <script>scripts\MM_GAME_TYPE_DRAW.gml</script>
             <script>scripts\MM_LEVEL_SELECT_DRAW.gml</script>
           </scripts>
-          <script>scripts\DRAW_BARS.gml</script>
         </scripts>
-        <script>scripts\Play_Background_Music.gml</script>
-        <script>scripts\Update_Class_Perks.gml</script>
       </scripts>
       <script>scripts\Playhit.gml</script>
     </scripts>

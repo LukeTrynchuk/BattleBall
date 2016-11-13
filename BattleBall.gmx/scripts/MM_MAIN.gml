@@ -22,7 +22,10 @@ else if (confirm && CanSwitchClass)
         case 1:
             MM_MENU_EDIT_CLASS();                                                                       //Code for the edit class option
             break;
-        case 2:
+        case 2 :
+            MM_MENU_MARKET_PLACE();                                                                     //Code for the market place option
+            break;
+        case 3:
             MM_MENU_QUIT();                                                                             //Code for the quit option
             break;
     }

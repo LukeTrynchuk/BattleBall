@@ -232,7 +232,8 @@ Gun_Accuracy = instance_create(b_x, b_y + 60, Obj_GunBar);      //The accuracy s
             <string>///MM_MENU variables
 MM_MENU_OPTIONS [0] = "Play Game";          //The first option
 MM_MENU_OPTIONS[1] = "Edit Class";          //The second option
-MM_MENU_OPTIONS[2] = "QUIT";                //The third option
+MM_MENU_OPTOINS[2] = "Market Place";        //The third option
+MM_MENU_OPTIONS[3] = "QUIT";                //The fourth option
 
 Current_Selected_Option = 0;                //This is the current selected option available
 
@@ -350,6 +351,54 @@ CurrentPerk = 0;
             <string>///MM_CHANGE_ITEM variables
 CurrentItem = 0;                        //The current item we're highlighting
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///MM_MARKET_PLACE variables
+//These are the sprites for the crates
+Crate_Sprite[0] = Bronze_Crate;
+Crate_Sprite[1] = Silver_Crate;
+Crate_Sprite[2] = Gold_Crate;
+
+//These are the sprites for the options (not selected)
+Crate_Option_Sprites[0] = spr_Market_Bronze;
+Crate_Option_Sprites[1] = spr_Market_Silver;
+Crate_Option_Sprites[2] = spr_Market_Gold;
+
+//These are the sprites for the options (selected)
+Crate_Option_Chosen_Sprites[0] = spr_Market_Bronze_Selected;
+Crate_Option_Chosen_Sprites[1] = spr_Market_Silver_Selected;
+Crate_Option_Chosen_Sprites[2] = spr_Market_Gold_Selected;
+
+//The current option selected
+Current_Crate_Option = 0;
+
+//The prices for the different crates
+Crate_Prices[0] = 10;
+Crate_Prices[1] = 40;
+Crate_Prices[2] = 100;
+
+//Crate descriptions
+Crate_Desc[0] = "A crate with mostly common items and some uncommon items.";
+Crate_Desc[1] = "A crate with mostly uncommon items and some rare items.";
+Crate_Desc[2] = "A crate with mostly rare items and some legendary items.";
 </string>
           </argument>
         </arguments>

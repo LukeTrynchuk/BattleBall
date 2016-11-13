@@ -16,19 +16,29 @@ switch(Current_Selected_Option)
     case 0:                                                                                                       //Play game
         draw_sprite_ext(PlayGame_Selected, 0, X_Start - 70 - Choose_XOffset, Y_Start, Scale,Scale,0, c_white, 1);
         draw_sprite_ext(Choose_Class, 0, X_Start - 50, Y_Start + OptionOffset * 1, Scale,Scale,0, c_white, 1);
-        draw_sprite_ext(Quit, 0, X_Start - 100, Y_Start + OptionOffset * 2, Scale,Scale,0, c_white, 1);
+        draw_sprite_ext(Market_Option, 0, X_Start - 100, Y_Start + OptionOffset * 2, Scale,Scale,0, c_white, 1);
+        draw_sprite_ext(Quit, 0, X_Start - 100, Y_Start + OptionOffset * 3, Scale,Scale,0, c_white, 1);
         draw_sprite_ext(Item_Selector, 0, X_Start - SelectorOffset, Y_Start, Scale,Scale,0, c_white, 1);
         break;
     case 1:                                                                                                       //Choose class
         draw_sprite_ext(PlayGame, 0, X_Start - 70, Y_Start, Scale,Scale,0, c_white, 1);
         draw_sprite_ext(Choose_Class_Selected, 0, X_Start - 50 - Choose_XOffset, Y_Start + OptionOffset * 1, Scale,Scale,0, c_white, 1);
-        draw_sprite_ext(Quit, 0, X_Start - 100, Y_Start + OptionOffset * 2, Scale,Scale,0, c_white, 1);
+        draw_sprite_ext(Market_Option, 0, X_Start - 100, Y_Start + OptionOffset * 2, Scale,Scale,0, c_white, 1);
+        draw_sprite_ext(Quit, 0, X_Start - 100, Y_Start + OptionOffset * 3, Scale,Scale,0, c_white, 1);
         draw_sprite_ext(Item_Selector, 0, X_Start - SelectorOffset, Y_Start + OptionOffset * 1, Scale,Scale,0, c_white, 1);
         break;
-    case 2:                                                                                                         //Quit
+    case 2:
+        draw_sprite_ext(PlayGame, 0, X_Start - 70, Y_Start, Scale,Scale,0, c_white, 1);
+        draw_sprite_ext(Choose_Class, 0, X_Start - 50 - Choose_XOffset, Y_Start + OptionOffset * 1, Scale,Scale,0, c_white, 1);
+        draw_sprite_ext(Market_Chosen_Option, 0, X_Start - 100, Y_Start + OptionOffset * 2, Scale,Scale,0, c_white, 1);
+        draw_sprite_ext(Quit, 0, X_Start - 100, Y_Start + OptionOffset * 3, Scale,Scale,0, c_white, 1);
+        draw_sprite_ext(Item_Selector, 0, X_Start - SelectorOffset, Y_Start + OptionOffset * 1, Scale,Scale,0, c_white, 1);
+        break;
+    case 3:                                                                                                         //Quit
         draw_sprite_ext(PlayGame, 0, X_Start - 70, Y_Start, Scale,Scale,0, c_white, 1);
         draw_sprite_ext(Choose_Class, 0, X_Start - 50, Y_Start + OptionOffset * 1, Scale,Scale,0, c_white, 1);
-        draw_sprite_ext(Quit_Selected, 0, X_Start - 75 - Choose_XOffset, Y_Start + OptionOffset * 2, Scale,Scale,0, c_white, 1);
+        draw_sprite_ext(Market_Option, 0, X_Start - 100, Y_Start + OptionOffset * 2, Scale,Scale,0, c_white, 1);
+        draw_sprite_ext(Quit_Selected, 0, X_Start - 75 - Choose_XOffset, Y_Start + OptionOffset * 3, Scale,Scale,0, c_white, 1);
         draw_sprite_ext(Item_Selector, 0, X_Start - SelectorOffset, Y_Start + OptionOffset * 2, Scale,Scale,0, c_white, 1);
         break;
 }
