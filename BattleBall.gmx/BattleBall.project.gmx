@@ -84,6 +84,57 @@
     </sounds>
   </sounds>
   <sprites name="sprites">
+    <sprites name="Final">
+      <sprites name="Blue_Goal">
+        <sprite>sprites\spr_Goal_Blue_Bottom</sprite>
+        <sprite>sprites\spr_Goal_Blue_Top</sprite>
+      </sprites>
+      <sprites name="Misc">
+        <sprite>sprites\spr_Water_Tower</sprite>
+        <sprite>sprites\spr_Wooden_Fence</sprite>
+        <sprite>sprites\spr_groundd</sprite>
+        <sprite>sprites\spr_T_Bar</sprite>
+        <sprite>sprites\spr_Chain_link_Fence</sprite>
+        <sprite>sprites\spr_Flood_Light</sprite>
+        <sprite>sprites\spr_Ventalation_System</sprite>
+        <sprite>sprites\spr_Desk_and_Lamp</sprite>
+        <sprite>sprites\spr_Chair_TV</sprite>
+        <sprite>sprites\spr_Boxs</sprite>
+        <sprite>sprites\spr_Roof_Vent</sprite>
+        <sprite>sprites\spr_Moon</sprite>
+        <sprites name="Building">
+          <sprites name="Second Floor">
+            <sprite>sprites\spr_Second_Floor_Floor</sprite>
+            <sprite>sprites\spr_Second_Floor_Light</sprite>
+            <sprite>sprites\spr_SecondFloor_Inside</sprite>
+            <sprite>sprites\spr_Second_Floor_Window</sprite>
+            <sprite>sprites\spr_Second_Floor_Raise</sprite>
+          </sprites>
+          <sprites name="First Floor">
+            <sprite>sprites\spr_First_Floor</sprite>
+            <sprite>sprites\spr_First_Floor_Window</sprite>
+            <sprite>sprites\spr_Lamp</sprite>
+          </sprites>
+        </sprites>
+        <sprites name="Ball">
+          <sprite>sprites\spr_Ball_Blue</sprite>
+          <sprite>sprites\spr_Ball_Red</sprite>
+        </sprites>
+        <sprites name="Score_Board">
+          <sprite>sprites\spr_Score_Board</sprite>
+          <sprite>sprites\spr_Score_Board_Faces</sprite>
+          <sprite>sprites\spr_Score_Board_Faces_Bugged</sprite>
+        </sprites>
+        <sprites name="Cars">
+          <sprite>sprites\spr_Race_Car</sprite>
+          <sprite>sprites\spr_RV_Final</sprite>
+          <sprite>sprites\spr_Truck_Final</sprite>
+        </sprites>
+      </sprites>
+      <sprites name="Effects">
+        <sprite>sprites\spr_Smoke</sprite>
+      </sprites>
+    </sprites>
     <sprites name="Title">
       <sprite>sprites\Title</sprite>
       <sprite>sprites\Title_JustName</sprite>
@@ -133,6 +184,7 @@
         <sprite>sprites\spr_fence</sprite>
       </sprites>
       <sprite>sprites\Speed_Pickup</sprite>
+      <sprite>sprites\spr_Invisible_Wall</sprite>
     </sprites>
     <sprites name="Bullet">
       <sprite>sprites\Bullet</sprite>
@@ -512,23 +564,33 @@
       <objects name="Temp">
         <object>objects\Obj_Truck</object>
         <object>objects\Obj_Pillar</object>
-        <object>objects\Obj_PillarTop</object>
         <object>objects\Obj_Barrel</object>
-        <object>objects\Obj_BoxSide</object>
-        <object>objects\Obj_Boxfront</object>
-        <object>objects\Obj_Stairs</object>
         <object>objects\Obj_Ground</object>
         <object>objects\Obj_Bus</object>
         <object>objects\Obj_Car</object>
-        <object>objects\Obj_rubbish1</object>
-        <object>objects\Obj_rubbish2</object>
         <object>objects\Obj_Fence</object>
+        <object>objects\obj_Chain_Link_Fence</object>
+        <object>objects\Obj_Flood_Light</object>
+        <object>objects\obj_RV</object>
+        <object>objects\obj_Water_Tower</object>
+        <object>objects\obj_First_Floor</object>
+        <object>objects\obj_First_Floor_Window</object>
+        <object>objects\obj_First_Floor_Lamp</object>
+        <object>objects\obj_Second_Floor</object>
+        <object>objects\Obj_Second_Floor_Floor</object>
+        <object>objects\obj_Second_Floor_Base_Raise</object>
+        <object>objects\obj_Ventalation_System</object>
+        <object>objects\obj_Chair_TV</object>
+        <object>objects\obj_Table_Lamp</object>
+        <object>objects\obj_Light</object>
+        <object>objects\obj_Scorebard_Second_Floor</object>
       </objects>
       <objects name="Material Types">
         <object>objects\obj_metal</object>
         <object>objects\obj_wood</object>
         <object>objects\obj_gravel</object>
       </objects>
+      <object>objects\Invisible_Wall</object>
     </objects>
     <objects name="Player">
       <object>objects\Obj_player</object>
