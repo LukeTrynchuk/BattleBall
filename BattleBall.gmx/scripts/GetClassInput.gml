@@ -1,23 +1,23 @@
 ///GetClassInput()
 
-up = keyboard_check(vk_space);
-down = keyboard_check(vk_down);
-left =  keyboard_check(vk_left);
-right = keyboard_check(vk_right);
-confirm = keyboard_check(vk_enter);
-back = keyboard_check(vk_shift);
+up = keyboard_check(vk_space);                              //The up key
+down = keyboard_check(vk_down);                             //The down key
+left =  keyboard_check(vk_left);                            //The left key
+right = keyboard_check(vk_right);                           //The right key
+confirm = keyboard_check(vk_enter);                         //The confirm key
+back = keyboard_check(vk_shift);                            //The back key
 
-var thresh = 0.5;
+var thresh = 0.5;                                           //The thresh hold amount
 
-if(gamepad_is_connected(gp_id))
+if(gamepad_is_connected(gp_id))                             //If the current gamepad is connected
 {
-    up = gamepad_axis_value(gp_id, gp_axislv) < -thresh;   
-    down = gamepad_axis_value(gp_id, gp_axislv) > thresh;
-    left =  gamepad_axis_value(gp_id, gp_axislh) < -thresh;
-    right = gamepad_axis_value(gp_id, gp_axislh) > thresh; 
-    btn_Y = gamepad_button_check_pressed(gp_id, gp_face4); 
+    up = gamepad_axis_value(gp_id, gp_axislv) < -thresh;    //The up axis
+    down = gamepad_axis_value(gp_id, gp_axislv) > thresh;   //The down axis
+    left =  gamepad_axis_value(gp_id, gp_axislh) < -thresh; //The left axis
+    right = gamepad_axis_value(gp_id, gp_axislh) > thresh;  //The right axis
+    btn_Y = gamepad_button_check_pressed(gp_id, gp_face4);  //The y button
     
-    confirm = gamepad_button_check_pressed(gp_id,gp_face1);
-    back = gamepad_button_check_pressed(gp_id,gp_face2);
-    start = gamepad_button_check_pressed(gp_id, gp_start);
+    confirm = gamepad_button_check_pressed(gp_id,gp_face1); //The confirm button
+    back = gamepad_button_check_pressed(gp_id,gp_face2);    //The back button
+    start = gamepad_button_check_pressed(gp_id, gp_start);  //The start button
 }

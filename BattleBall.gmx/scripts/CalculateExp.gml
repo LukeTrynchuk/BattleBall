@@ -8,5 +8,5 @@
     lvl5 = 5600 exp
     ...
 */
-var lvl = argument[0];
-return 800 + ((lvl - 1) * 1600);
+var lvl = argument[0];              //The current level is the first argument
+return 800 + ((lvl - 1) * 1600);    //Algorithm for claculating the required amount of exp

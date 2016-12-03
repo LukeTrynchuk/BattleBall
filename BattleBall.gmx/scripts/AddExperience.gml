@@ -1,48 +1,48 @@
 ///AddExperience(numShots, numGoals)
-var numShots = argument[0];
-var numGoals = argument[1];
-var Exp = EarnedExp(numShots, numGoals);
-var WinExp = 0;
-if(global.player1_score > global.player2_score) WinExp = global.WinMatchExp;
-Exp += WinExp;
+var numShots = argument[0];                                                                                         //The number of shots
+var numGoals = argument[1];                                                                                         //The number of goals
+var Exp = EarnedExp(numShots, numGoals);                                                                            //The exp earned
+var WinExp = 0;                                                                                                     //The win exp
+if(global.player1_score > global.player2_score) WinExp = global.WinMatchExp;                                        //If won the get win exp
+Exp += WinExp;                                                                                                      //Add the exp
 
 //Increment the experience points
-switch(global.Class_Type[global.Current_Class])
+switch(global.Class_Type[global.Current_Class])                                                                     //Challenge the current class type
 {
-    case "Pistol":
-        global.PistolExp += Exp;
-        if(global.PistolExp >= CalculateExp(global.PistolLvl) && global.PistolLvl < global.LvlCap)
+    case "Pistol":                                                                                                  //If pistol
+        global.PistolExp += Exp;                                                                                    //Add the exp to the pistol exp
+        if(global.PistolExp >= CalculateExp(global.PistolLvl) && global.PistolLvl < global.LvlCap)                  //If we leveled up
         {
-            global.PistolExp = global.PistolExp % CalculateExp(global.PistolLvl);
-            global.PistolLvl++;
-            LevelEffInst = instance_create(x,y,Obj_LevelUp_Effect);
+            global.PistolExp = global.PistolExp % CalculateExp(global.PistolLvl);                                   //Get remaining exp
+            global.PistolLvl++;                                                                                     //Increment the level
+            LevelEffInst = instance_create(x,y,Obj_LevelUp_Effect);                                                 //Create a level up instance
         }
         break;
-    case "MachineGun":
-        global.MachineGunExp += Exp;
-        if(global.MachineGunExp >= CalculateExp(global.MachineGunLvl) && global.MachineGunLvl < global.LvlCap)
+    case "MachineGun":                                                                                              //If machine gun 
+        global.MachineGunExp += Exp;                                                                                //Add exp to the machine gun exp
+        if(global.MachineGunExp >= CalculateExp(global.MachineGunLvl) && global.MachineGunLvl < global.LvlCap)      //If we leveled up
         {
-            global.MachineGunExp = global.MachineGunExp % CalculateExp(global.MachineGunLvl);
-            global.MachineGunLvl++;
-            LevelEffInst = instance_create(x,y,Obj_LevelUp_Effect);
+            global.MachineGunExp = global.MachineGunExp % CalculateExp(global.MachineGunLvl);                       //Get the remaining exp
+            global.MachineGunLvl++;                                                                                 //Increment the gun level
+            LevelEffInst = instance_create(x,y,Obj_LevelUp_Effect);                                                 //Create a level up instance
         }
         break;
-    case "Minigun":
-        global.MinigunExp += Exp;
-        if(global.MinigunExp >= CalculateExp(global.MinigunLvl) && global.MinigunLvl < global.LvlCap)
+    case "Minigun":                                                                                                 //If minigun
+        global.MinigunExp += Exp;                                                                                   //Add the exp to the minigun exp
+        if(global.MinigunExp >= CalculateExp(global.MinigunLvl) && global.MinigunLvl < global.LvlCap)               //If we leveled up
         {
-            global.MinigunExp = global.MinigunExp % CalculateExp(global.MinigunLvl);
-            global.MinigunLvl++;
-            LevelEffInst = instance_create(x,y,Obj_LevelUp_Effect);
+            global.MinigunExp = global.MinigunExp % CalculateExp(global.MinigunLvl);                                //Get the remaining exp
+            global.MinigunLvl++;                                                                                    //Increment the minigun level
+            LevelEffInst = instance_create(x,y,Obj_LevelUp_Effect);                                                 //Create a level up instance
         }
         break;
-    case "Sniper":
-        global.SniperExp += Exp;
-        if(global.SniperExp >= CalculateExp(global.SniperLvl) && global.SniperLvl < global.LvlCap)
+    case "Sniper":                                                                                                  //If sniper
+        global.SniperExp += Exp;                                                                                    //Add experience to sniper experience
+        if(global.SniperExp >= CalculateExp(global.SniperLvl) && global.SniperLvl < global.LvlCap)                  //If leveled up
         {
-            global.SniperExp = global.SniperExp % CalculateExp(global.SniperLvl);
-            global.SniperLvl++;
-            LevelEffInst = instance_create(x,y,Obj_LevelUp_Effect);
+            global.SniperExp = global.SniperExp % CalculateExp(global.SniperLvl);                                   //Get the remaining experience left
+            global.SniperLvl++;                                                                                     //Increment the sniper level
+            LevelEffInst = instance_create(x,y,Obj_LevelUp_Effect);                                                 //Create a level up instance
         }
         break;
 }

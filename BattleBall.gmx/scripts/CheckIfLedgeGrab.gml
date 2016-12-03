@@ -1,10 +1,10 @@
 ///CheckIfLedgeGrab()
 
-var falling = phy_position_y - phy_position_yprevious > 0;
-var wasnt_wall = !position_meeting(phy_position_x+17 * image_xscale,phy_position_yprevious, Obj_Solid);
-var is_wall = position_meeting(phy_position_x + 17 * image_xscale, phy_position_y, Obj_Solid);
+var falling = phy_position_y - phy_position_yprevious > 0;                                                  //Are we falling?
+var wasnt_wall = !position_meeting(phy_position_x+17 * image_xscale,phy_position_yprevious, Obj_Solid);     //Was there not a wall
+var is_wall = position_meeting(phy_position_x + 17 * image_xscale, phy_position_y, Obj_Solid);              //Is there now a wall
 
-if(falling && wasnt_wall && is_wall)
+if(falling && wasnt_wall && is_wall)                                                                        //If all three
 {   
 /*
     while(!place_meeting(phy_position_x + image_xscale,phy_position_y, Obj_Solid))
@@ -17,6 +17,6 @@ if(falling && wasnt_wall && is_wall)
         phy_position_y -=1;
     } 
 */    
-    state = LedgeGrab;
+    state = LedgeGrab;                                                                                      //Set to the ledge grab state
 }
 
