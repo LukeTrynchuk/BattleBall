@@ -79,6 +79,9 @@
     <instance objName="Invisible_Wall" x="1280" y="336" name="inst_BEA6B33E" locked="0" code="" scaleX="0.625" scaleY="23.0967750549316" colour="4294967295" rotation="0"/>
     <instance objName="Invisible_Wall" x="640" y="0" name="inst_41E93AB7" locked="0" code="" scaleX="40.2903213500977" scaleY="0.5625" colour="4294967295" rotation="0"/>
     <instance objName="Invisible_Wall" x="664" y="50" name="inst_2BB556C5" locked="0" code="" scaleX="16.25" scaleY="0.375" colour="4294967295" rotation="0"/>
+    <instance objName="obj_Water_Tower" x="184" y="560" name="inst_53ECFE34" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Obj_Flood_Light" x="1136" y="592" name="inst_C1E9B695" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="Obj_Flood_Light" x="250" y="592" name="inst_B95A6C15" locked="0" code="" scaleX="-1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>-1</PhysicsWorld>

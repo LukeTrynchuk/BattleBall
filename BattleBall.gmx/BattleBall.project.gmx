@@ -98,6 +98,7 @@
         <sprite>sprites\spr_Flood_Light</sprite>
         <sprite>sprites\spr_Ventalation_System</sprite>
         <sprite>sprites\spr_Desk_and_Lamp</sprite>
+        <sprite>sprites\spr_barrel</sprite>
         <sprite>sprites\spr_Chair_TV</sprite>
         <sprite>sprites\spr_Boxs</sprite>
         <sprite>sprites\spr_Roof_Vent</sprite>
@@ -117,8 +118,10 @@
           </sprites>
         </sprites>
         <sprites name="Ball">
-          <sprite>sprites\spr_Ball_Blue</sprite>
-          <sprite>sprites\spr_Ball_Red</sprite>
+          <sprites name="Level_1">
+            <sprite>sprites\spr_Ball_Blue</sprite>
+            <sprite>sprites\spr_Ball_Red</sprite>
+          </sprites>
         </sprites>
         <sprites name="Score_Board">
           <sprite>sprites\spr_Score_Board</sprite>
@@ -142,47 +145,112 @@
       <sprite>sprites\Title_Screen</sprite>
     </sprites>
     <sprites name="Player">
-      <sprites name="Player1">
-        <sprite>sprites\player_walk</sprite>
-        <sprite>sprites\player_jump</sprite>
-        <sprite>sprites\Player1_ID</sprite>
-        <sprite>sprites\player_idle</sprite>
-        <sprite>sprites\player_ledge_grab</sprite>
+      <sprites name="TEMP">
+        <sprites name="Player1">
+          <sprite>sprites\player_walk</sprite>
+          <sprite>sprites\player_jump</sprite>
+          <sprite>sprites\Player1_ID</sprite>
+          <sprite>sprites\player_idle</sprite>
+          <sprite>sprites\player_ledge_grab</sprite>
+        </sprites>
+        <sprites name="Player2">
+          <sprite>sprites\player_walk_p2</sprite>
+          <sprite>sprites\player_ledge_grab_p2</sprite>
+          <sprite>sprites\player_idle_p2</sprite>
+          <sprite>sprites\player_jump_p2</sprite>
+          <sprite>sprites\Player2_ID</sprite>
+        </sprites>
+        <sprite>sprites\Player_Head</sprite>
+        <sprite>sprites\Player_Head_Box</sprite>
+        <sprite>sprites\Player_Head_Box_2</sprite>
       </sprites>
-      <sprites name="Player2">
-        <sprite>sprites\player_walk_p2</sprite>
-        <sprite>sprites\player_ledge_grab_p2</sprite>
-        <sprite>sprites\player_idle_p2</sprite>
-        <sprite>sprites\player_jump_p2</sprite>
-        <sprite>sprites\Player2_ID</sprite>
+      <sprites name="FINAL">
+        <sprites name="Light">
+          <sprites name="Gavin">
+            <sprites name="Blue">
+              <sprites name="Idle">
+                <sprite>sprites\spr_Gavin_Idle_Blue</sprite>
+              </sprites>
+              <sprites name="Fall">
+                <sprite>sprites\spr_Gavin_Fall_Blue</sprite>
+              </sprites>
+              <sprites name="Jump">
+                <sprite>sprites\spr_Gavin_Jump_Blue</sprite>
+              </sprites>
+              <sprites name="Run">
+                <sprite>sprites\spr_Gavin_Run_Blue</sprite>
+              </sprites>
+            </sprites>
+            <sprites name="Orange"/>
+          </sprites>
+        </sprites>
+        <sprites name="Heavy">
+          <sprites name="Phelan">
+            <sprites name="Blue">
+              <sprites name="Jump">
+                <sprite>sprites\spr_Phelan_Jump_Blue</sprite>
+              </sprites>
+              <sprites name="Fall">
+                <sprite>sprites\spr_Phelan_Fall_Blue</sprite>
+              </sprites>
+              <sprites name="Run">
+                <sprite>sprites\spr_Phelan_Run_Blue</sprite>
+              </sprites>
+              <sprites name="Idle">
+                <sprite>sprites\spr_Phelan_Idle_Blue</sprite>
+              </sprites>
+            </sprites>
+            <sprites name="Red">
+              <sprites name="Idle">
+                <sprite>sprites\spr_Phelan_Idle_Orange</sprite>
+              </sprites>
+            </sprites>
+          </sprites>
+        </sprites>
+        <sprites name="Gunsman">
+          <sprites name="Jakob">
+            <sprites name="Blue">
+              <sprites name="Run">
+                <sprite>sprites\spr_Jakob_Run_Blue</sprite>
+              </sprites>
+              <sprites name="Jump">
+                <sprite>sprites\spr_Jakob_Jump_Blue</sprite>
+              </sprites>
+              <sprites name="Idle">
+                <sprite>sprites\spr_Jakob_Idle_Blue</sprite>
+              </sprites>
+              <sprites name="Fall">
+                <sprite>sprites\spr_Jakob_Fall_Blue</sprite>
+              </sprites>
+            </sprites>
+            <sprites name="Red"/>
+          </sprites>
+        </sprites>
+        <sprites name="Recon">
+          <sprites name="Payton">
+            <sprites name="Blue">
+              <sprites name="Jump">
+                <sprite>sprites\spr_Payton_Jump_Blue</sprite>
+              </sprites>
+              <sprites name="Run">
+                <sprite>sprites\spr_Payton_Run_Blue</sprite>
+              </sprites>
+              <sprites name="Fall">
+                <sprite>sprites\spr_Payton_Fall_Blue</sprite>
+              </sprites>
+              <sprites name="Idle">
+                <sprite>sprites\spr_Payton_Idle_Blue</sprite>
+              </sprites>
+            </sprites>
+            <sprites name="Red"/>
+          </sprites>
+        </sprites>
       </sprites>
-      <sprite>sprites\Player_Head</sprite>
-      <sprite>sprites\Player_Head_Box</sprite>
-      <sprite>sprites\Player_Head_Box_2</sprite>
     </sprites>
     <sprites name="Level">
       <sprite>sprites\solid_block</sprite>
-      <sprite>sprites\ball</sprite>
-      <sprite>sprites\Net</sprite>
-      <sprite>sprites\Net2</sprite>
       <sprite>sprites\Gun_Crate</sprite>
       <sprite>sprites\Slope</sprite>
-      <sprites name="Temp">
-        <sprite>sprites\spr_truck</sprite>
-        <sprite>sprites\spr_pillar</sprite>
-        <sprite>sprites\spr_topPillar</sprite>
-        <sprite>sprites\spr_stairs</sprite>
-        <sprite>sprites\spr_barrel</sprite>
-        <sprite>sprites\spr_boxSide</sprite>
-        <sprite>sprites\spr_boxFront</sprite>
-        <sprite>sprites\spr_Bus</sprite>
-        <sprite>sprites\spr_ground</sprite>
-        <sprite>sprites\spr_car</sprite>
-        <sprite>sprites\spr_RV</sprite>
-        <sprite>sprites\spr_rubbish</sprite>
-        <sprite>sprites\spr_rubbish2</sprite>
-        <sprite>sprites\spr_fence</sprite>
-      </sprites>
       <sprite>sprites\Speed_Pickup</sprite>
       <sprite>sprites\spr_Invisible_Wall</sprite>
     </sprites>
@@ -566,7 +634,6 @@
         <object>objects\Obj_Pillar</object>
         <object>objects\Obj_Barrel</object>
         <object>objects\Obj_Ground</object>
-        <object>objects\Obj_Bus</object>
         <object>objects\Obj_Car</object>
         <object>objects\Obj_Fence</object>
         <object>objects\obj_Chain_Link_Fence</object>
