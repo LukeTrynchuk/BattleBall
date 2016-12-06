@@ -181,7 +181,6 @@
                 <sprite>sprites\spr_Gavin_Run_Blue</sprite>
               </sprites>
             </sprites>
-            <sprites name="Orange"/>
           </sprites>
         </sprites>
         <sprites name="Heavy">
@@ -223,7 +222,6 @@
                 <sprite>sprites\spr_Jakob_Fall_Blue</sprite>
               </sprites>
             </sprites>
-            <sprites name="Red"/>
           </sprites>
         </sprites>
         <sprites name="Recon">
@@ -242,7 +240,6 @@
                 <sprite>sprites\spr_Payton_Idle_Blue</sprite>
               </sprites>
             </sprites>
-            <sprites name="Red"/>
           </sprites>
         </sprites>
       </sprites>
