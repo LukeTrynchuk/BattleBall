@@ -85,8 +85,8 @@ if(!hasShot)
   <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints>
     <point>0,0</point>
-    <point>38,0</point>
-    <point>38,10</point>
-    <point>0,10</point>
+    <point>20,0</point>
+    <point>20,20</point>
+    <point>0,20</point>
   </PhysicsShapePoints>
 </object>
